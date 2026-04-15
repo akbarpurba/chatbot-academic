@@ -3,96 +3,137 @@
     {
       "tag": "salam",
       "patterns": [
-        "halo",
-        "hai",
-        "haii",
-        "halo bot",
-        "pagi",
-        "selamat pagi",
-        "siang",
-        "selamat siang",
-        "malam",
-        "selamat malam",
-        "hey",
-        "halo gan",
-        "hai bro",
-        "hai kak",
-        "halo min",
-        "permisi",
-        "assalamualaikum",
-        "halo chatbot",
-        "hai kamu",
-        "hello",
-        "woi"
+        "halo", "hai", "haii", "halo bot", "pagi", "selamat pagi",
+        "siang", "selamat siang", "malam", "selamat malam",
+        "hey", "halo gan", "hai bro", "hai kak", "halo min", "woi", "assalamualaikum"
       ],
       "responses": [
         "Halo! Ada yang bisa saya bantu?",
-        "Hai juga! Mau tanya apa?",
-        "Halo, silakan bertanya 😊",
-        "Hai! Saya siap membantu kamu",
-        "Halo kak, ada yang bisa dibantu?"
+        "Hai! Mau tanya apa?",
+        "Halo, silakan bertanya 😊"
+      ]
+    },
+    {
+      "tag": "perpisahan",
+      "patterns": [
+        "bye", "dadah", "sampai jumpa", "see you",
+        "saya pergi dulu", "makasih ya", "terima kasih",
+        "oke makasih", "cukup itu saja", "selesai"
+      ],
+      "responses": [
+        "Sampai jumpa lagi!",
+        "Terima kasih, semoga harimu menyenangkan!",
+        "Baik, sampai ketemu lagi ya 😊"
       ]
     },
     {
       "tag": "biaya_kuliah",
       "patterns": [
-        "berapa biaya kuliah",
-        "biaya kuliah berapa",
-        "uang kuliah berapa",
-        "kuliah bayar berapa",
-        "biaya semester berapa",
-        "berapa uang semester",
-        "biaya masuk kampus ini",
-        "uang kuliah mahal gak",
-        "kisaran biaya kuliah",
-        "biaya kuliah di sini berapa",
-        "berapa spp kuliah",
-        "biaya per semester berapa",
-        "bayar kuliah berapa sih",
-        "info biaya kuliah dong",
-        "biaya daftar kuliah",
-        "berapa uang masuk kuliah",
-        "biaya awal kuliah berapa",
-        "kuliah disini mahal gak",
-        "total biaya kuliah berapa",
-        "biaya kuliah per tahun"
+        "berapa biaya kuliah", "uang kuliah berapa", "biaya semester berapa",
+        "kuliah bayar berapa", "berapa spp", "biaya masuk kampus",
+        "kuliah mahal gak", "kisaran biaya kuliah", "biaya kuliah disini"
       ],
       "responses": [
         "Biaya kuliah mulai dari 3 juta per semester",
-        "Untuk biaya kuliah sekitar 3 juta per semester ya",
-        "Biaya kuliah tergantung jurusan, mulai dari 3 juta",
-        "Kisaran biaya kuliah sekitar 3 juta per semester"
+        "Kisaran biaya kuliah sekitar 3 juta per semester",
+        "Biaya tergantung jurusan, mulai dari 3 juta"
       ]
     },
     {
       "tag": "jadwal_kuliah",
       "patterns": [
-        "jadwal kuliah",
-        "lihat jadwal kuliah",
-        "jadwal kuliah dimana",
-        "cek jadwal kuliah",
-        "jadwal masuk kuliah",
-        "kapan jadwal kuliah",
-        "jadwal kelas saya",
-        "lihat jadwal dimana ya",
-        "jadwal kuliah bisa dilihat dimana",
-        "cara lihat jadwal kuliah",
-        "jadwal perkuliahan",
-        "info jadwal kuliah",
-        "jadwal mata kuliah",
-        "jadwal belajar",
-        "jadwal kampus",
-        "jadwal kuliah hari ini",
-        "jadwal kuliah minggu ini",
-        "dimana lihat jadwal",
-        "jadwal kuliah online",
-        "jadwal kelas hari ini"
+        "jadwal kuliah", "cek jadwal", "jadwal kelas",
+        "kapan jadwal kuliah", "lihat jadwal dimana",
+        "jadwal hari ini", "jadwal minggu ini",
+        "jadwal perkuliahan"
       ],
       "responses": [
-        "Jadwal kuliah bisa dilihat di SIAKAD kampus",
-        "Silakan cek jadwal melalui sistem SIAKAD",
-        "Jadwal kuliah tersedia di portal akademik kampus",
-        "Untuk jadwal kuliah, bisa dicek di SIAKAD ya"
+        "Jadwal kuliah bisa dilihat di SIAKAD",
+        "Silakan cek jadwal melalui portal akademik",
+        "Jadwal tersedia di sistem SIAKAD kampus"
+      ]
+    },
+    {
+      "tag": "pendaftaran",
+      "patterns": [
+        "cara daftar", "daftar kuliah gimana",
+        "bagaimana cara pendaftaran", "info pendaftaran",
+        "cara masuk kampus", "daftar mahasiswa baru",
+        "alur pendaftaran"
+      ],
+      "responses": [
+        "Pendaftaran bisa dilakukan melalui website resmi kampus",
+        "Silakan daftar melalui portal PMB kampus",
+        "Ikuti alur pendaftaran di website resmi kampus"
+      ]
+    },
+    {
+      "tag": "jurusan",
+      "patterns": [
+        "ada jurusan apa saja", "jurusan di kampus ini",
+        "pilihan jurusan", "daftar jurusan",
+        "kampus ini ada jurusan apa",
+        "jurusan yang tersedia"
+      ],
+      "responses": [
+        "Tersedia berbagai jurusan seperti Informatika, Sistem Informasi, dan lainnya",
+        "Jurusan bisa dilihat di website resmi kampus",
+        "Silakan cek daftar jurusan di portal kampus"
+      ]
+    },
+    {
+      "tag": "lokasi",
+      "patterns": [
+        "kampus dimana", "alamat kampus",
+        "lokasi kampus", "kampus ini dimana",
+        "alamat lengkap kampus",
+        "letak kampus dimana"
+      ],
+      "responses": [
+        "Lokasi kampus dapat dilihat di Google Maps atau website resmi",
+        "Alamat kampus tersedia di halaman kontak website",
+        "Silakan cek lokasi kampus melalui Google Maps"
+      ]
+    },
+    {
+      "tag": "beasiswa",
+      "patterns": [
+        "ada beasiswa", "info beasiswa",
+        "cara dapat beasiswa", "beasiswa kampus",
+        "apakah ada beasiswa",
+        "program beasiswa"
+      ],
+      "responses": [
+        "Tersedia beberapa program beasiswa, silakan cek website kampus",
+        "Info beasiswa dapat dilihat di portal kampus",
+        "Beasiswa tersedia untuk mahasiswa berprestasi"
+      ]
+    },
+    {
+      "tag": "login",
+      "patterns": [
+        "tidak bisa login", "gagal login",
+        "kenapa tidak bisa masuk",
+        "login error", "akun tidak bisa login",
+        "masalah login siakad"
+      ],
+      "responses": [
+        "Pastikan username dan password benar",
+        "Silakan hubungi admin jika masih tidak bisa login",
+        "Coba reset password melalui sistem"
+      ]
+    },
+    {
+      "tag": "terima_kasih",
+      "patterns": [
+        "terima kasih", "makasih", "thanks",
+        "thank you", "makasih banyak",
+        "terimakasih ya"
+      ],
+      "responses": [
+        "Sama-sama 😊",
+        "Senang bisa membantu!",
+        "Silakan, kalau ada pertanyaan lagi tanya saja ya"
       ]
     }
   ]
