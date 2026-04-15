@@ -1,0 +1,99 @@
+{
+  "intents": [
+    {
+      "tag": "salam",
+      "patterns": [
+        "halo",
+        "hai",
+        "haii",
+        "halo bot",
+        "pagi",
+        "selamat pagi",
+        "siang",
+        "selamat siang",
+        "malam",
+        "selamat malam",
+        "hey",
+        "halo gan",
+        "hai bro",
+        "hai kak",
+        "halo min",
+        "permisi",
+        "assalamualaikum",
+        "halo chatbot",
+        "hai kamu",
+        "hello",
+        "woi"
+      ],
+      "responses": [
+        "Halo! Ada yang bisa saya bantu?",
+        "Hai juga! Mau tanya apa?",
+        "Halo, silakan bertanya 😊",
+        "Hai! Saya siap membantu kamu",
+        "Halo kak, ada yang bisa dibantu?"
+      ]
+    },
+    {
+      "tag": "biaya_kuliah",
+      "patterns": [
+        "berapa biaya kuliah",
+        "biaya kuliah berapa",
+        "uang kuliah berapa",
+        "kuliah bayar berapa",
+        "biaya semester berapa",
+        "berapa uang semester",
+        "biaya masuk kampus ini",
+        "uang kuliah mahal gak",
+        "kisaran biaya kuliah",
+        "biaya kuliah di sini berapa",
+        "berapa spp kuliah",
+        "biaya per semester berapa",
+        "bayar kuliah berapa sih",
+        "info biaya kuliah dong",
+        "biaya daftar kuliah",
+        "berapa uang masuk kuliah",
+        "biaya awal kuliah berapa",
+        "kuliah disini mahal gak",
+        "total biaya kuliah berapa",
+        "biaya kuliah per tahun"
+      ],
+      "responses": [
+        "Biaya kuliah mulai dari 3 juta per semester",
+        "Untuk biaya kuliah sekitar 3 juta per semester ya",
+        "Biaya kuliah tergantung jurusan, mulai dari 3 juta",
+        "Kisaran biaya kuliah sekitar 3 juta per semester"
+      ]
+    },
+    {
+      "tag": "jadwal_kuliah",
+      "patterns": [
+        "jadwal kuliah",
+        "lihat jadwal kuliah",
+        "jadwal kuliah dimana",
+        "cek jadwal kuliah",
+        "jadwal masuk kuliah",
+        "kapan jadwal kuliah",
+        "jadwal kelas saya",
+        "lihat jadwal dimana ya",
+        "jadwal kuliah bisa dilihat dimana",
+        "cara lihat jadwal kuliah",
+        "jadwal perkuliahan",
+        "info jadwal kuliah",
+        "jadwal mata kuliah",
+        "jadwal belajar",
+        "jadwal kampus",
+        "jadwal kuliah hari ini",
+        "jadwal kuliah minggu ini",
+        "dimana lihat jadwal",
+        "jadwal kuliah online",
+        "jadwal kelas hari ini"
+      ],
+      "responses": [
+        "Jadwal kuliah bisa dilihat di SIAKAD kampus",
+        "Silakan cek jadwal melalui sistem SIAKAD",
+        "Jadwal kuliah tersedia di portal akademik kampus",
+        "Untuk jadwal kuliah, bisa dicek di SIAKAD ya"
+      ]
+    }
+  ]
+}
