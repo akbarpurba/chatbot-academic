@@ -20,11 +20,11 @@
         "hi"
       ],
       "responses": [
-        "Halo! &#128075; Ada yang bisa saya bantu terkait kampus?",
-        "Hai! Selamat datang di layanan informasi kampus &#128522;",
+        "Halo! &#9995; Ada yang bisa saya bantu terkait kampus?",
+        "Hai! Selamat datang di layanan informasi kampus &#128516;",
         "Halo, silakan tanya apa saja tentang kampus ya!",
         "Hai juga! Mau tanya apa hari ini?",
-        "Selamat datang &#128075; Saya siap membantu informasi kampus."
+        "Selamat datang &#9995; Saya siap membantu informasi kampus."
       ]
     },
 
@@ -45,11 +45,36 @@
         "alamat lengkap kampus"
       ],
       "responses": [
-        "Kampus STMIK Pelita Nusantara berada di Medan.",
-        "Lokasi kampus ada di kota Medan ya &#128522;",
-        "Kampus kami berada di Medan, mudah diakses.",
-        "Alamat kampus bisa dilihat di website resmi.",
-        "Kampus PENUSA terletak di Medan."
+        "Kampus STMIK Pelita Nusantara berada di Medan. Untuk alamat lengkap, silakan cek website resmi kampus.",
+        "Lokasi kampus ada di kota Medan ya &#128516;",
+        "Kampus kami berada di Medan, mudah diakses dengan transportasi umum.",
+        "Alamat kampus bisa kamu lihat di website resmi atau Google Maps ya.",
+        "Kampus PENUSA terletak di Medan, Sumatera Utara."
+      ]
+    },
+
+    {
+      "tag": "program_studi",
+      "patterns": [
+        "program studi apa saja",
+        "jurusan yang tersedia",
+        "ada jurusan apa aja",
+        "prodi di kampus ini",
+        "kampus ini ada jurusan apa",
+        "pilihan jurusan",
+        "daftar program studi",
+        "prodi penusa apa saja",
+        "jurusan favorit apa aja",
+        "ada teknik informatika ga",
+        "sistem informasi ada",
+        "jurusan kampus ini"
+      ],
+      "responses": [
+        "Program studi yang tersedia antara lain Teknik Informatika dan Sistem Informasi.",
+        "Kampus menyediakan jurusan IT seperti Informatika dan Sistem Informasi.",
+        "Beberapa prodi unggulan: Teknik Informatika & Sistem Informasi.",
+        "Silakan cek website kampus untuk daftar lengkap program studi ya.",
+        "Jurusan yang tersedia fokus di bidang teknologi informasi."
       ]
     },
 
@@ -70,11 +95,11 @@
         "registrasi mahasiswa baru"
       ],
       "responses": [
-        "Pendaftaran bisa dilakukan secara online.",
-        "Silakan daftar melalui portal PMB kampus.",
-        "Isi formulir dan lengkapi berkas ya.",
-        "Pendaftaran mahasiswa baru bisa dilakukan online &#128522;",
-        "Cek menu PMB di website kampus."
+        "Pendaftaran bisa dilakukan secara online melalui website resmi kampus.",
+        "Silakan daftar melalui portal PMB yang tersedia di website kampus.",
+        "Untuk mendaftar, isi formulir online dan lengkapi berkas yang diminta.",
+        "Pendaftaran mahasiswa baru bisa dilakukan secara online ya &#128516;",
+        "Cek menu PMB di website kampus untuk info lengkap pendaftaran."
       ]
     },
 
@@ -95,40 +120,228 @@
         "total biaya kuliah"
       ],
       "responses": [
-        "Biaya kuliah bervariasi tergantung program studi.",
-        "Untuk info UKT, cek website kampus.",
-        "Biaya tiap jurusan berbeda ya &#128522;",
-        "Silakan hubungi administrasi kampus.",
-        "Info lengkap biaya tersedia di website."
+        "Biaya kuliah bervariasi tergantung program studi, silakan cek website resmi kampus.",
+        "Untuk info UKT, bisa dilihat di bagian biaya pendidikan di website kampus.",
+        "Biaya kuliah berbeda tiap jurusan ya &#128516;",
+        "Silakan hubungi bagian administrasi untuk detail biaya kuliah.",
+        "Info lengkap biaya kuliah tersedia di website resmi kampus."
       ]
     },
 
     {
-      "tag": "kontak",
+      "tag": "fasilitas",
       "patterns": [
-        "kontak kampus",
-        "nomor kampus",
-        "no telp kampus",
-        "hubungi kampus",
-        "kontak admin",
-        "nomor admin kampus",
-        "call center kampus",
-        "cara menghubungi kampus",
-        "info kontak kampus",
-        "alamat email kampus",
-        "wa kampus ada",
-        "nomor whatsapp kampus",
-        "min kontaknya dong",
-        "gimana cara hubungi kampus",
-        "butuh nomor kampus"
+        "fasilitas kampus apa saja",
+        "kampus punya fasilitas apa",
+        "ada lab komputer ga",
+        "fasilitas lengkap ga",
+        "sarana kampus",
+        "gedung kampus gimana",
+        "fasilitas penusa",
+        "kampusnya ada wifi ga",
+        "ruang belajar gimana",
+        "perpustakaan ada",
+        "fasilitas mahasiswa",
+        "kampusnya nyaman ga"
       ],
       "responses": [
-        "Silakan hubungi kampus melalui kontak resmi.",
-        "Untuk info lebih lanjut hubungi admin ya &#128522;",
-        "Kontak tersedia di website resmi kampus.",
-        "Cek halaman kontak kampus ya.",
-        "Hubungi kampus via telepon atau email."
+        "Kampus menyediakan lab komputer, ruang kelas nyaman, dan akses internet.",
+        "Fasilitas meliputi lab, perpustakaan, dan ruang belajar.",
+        "Tersedia berbagai fasilitas penunjang pembelajaran.",
+        "Kampus dilengkapi dengan fasilitas modern untuk mahasiswa.",
+        "Fasilitas cukup lengkap untuk mendukung kegiatan belajar."
       ]
-    }
+    },
+
+    {
+      "tag": "login_siakad",
+      "patterns": [
+        "cara login siakad",
+        "gimana login siakad",
+        "masuk siakad gimana",
+        "login siakad penusa",
+        "cara akses siakad",
+        "gabisa login siakad",
+        "cara buka siakad",
+        "login sistem akademik",
+        "akses siakad mahasiswa",
+        "cara masuk akun kampus"
+      ],
+      "responses": [
+        "Login SIAKAD menggunakan NIM dan password yang diberikan kampus.",
+        "Silakan akses SIAKAD melalui website resmi lalu login dengan akun mahasiswa.",
+        "Gunakan NIM sebagai username untuk login SIAKAD.",
+        "Jika belum punya akun, hubungi admin kampus.",
+        "Pastikan data login benar saat masuk ke SIAKAD."
+      ]
+    },
+
+    {
+      "tag": "lihat_krs",
+      "patterns": [
+        "cara lihat krs",
+        "lihat krs dimana",
+        "cek krs",
+        "krs saya dimana",
+        "cara buka krs",
+        "krs di siakad",
+        "cara ambil krs",
+        "lihat mata kuliah",
+        "cek krs online",
+        "menu krs dimana"
+      ],
+      "responses": [
+        "KRS dapat dilihat melalui menu KRS di SIAKAD.",
+        "Login ke SIAKAD lalu pilih menu KRS.",
+        "Silakan cek KRS di akun SIAKAD masing-masing.",
+        "Menu KRS tersedia setelah login ke sistem akademik.",
+        "KRS bisa diakses melalui dashboard SIAKAD."
+      ]
+    },
+
+    {
+      "tag": "lihat_khs",
+      "patterns": [
+        "cara lihat khs",
+        "cek nilai",
+        "nilai saya dimana",
+        "lihat khs",
+        "khs di siakad",
+        "cara cek nilai",
+        "nilai semester",
+        "cek ipk",
+        "lihat hasil studi",
+        "nilai kuliah saya"
+      ],
+      "responses": [
+        "KHS dapat dilihat di menu nilai pada SIAKAD.",
+        "Login ke SIAKAD lalu pilih menu KHS.",
+        "Nilai kuliah bisa dicek melalui sistem akademik.",
+        "Silakan buka menu KHS setelah login.",
+        "KHS tersedia di dashboard SIAKAD."
+      ]
+    },
+
+    {
+      "tag": "jadwal_kuliah",
+      "patterns": [
+        "jadwal kuliah saya",
+        "lihat jadwal kuliah",
+        "cek jadwal",
+        "jadwal kelas",
+        "jadwal perkuliahan",
+        "kuliah hari apa",
+        "jadwal semester ini",
+        "cek jadwal di siakad",
+        "jadwal kuliah dimana",
+        "lihat jadwal online"
+      ],
+      "responses": [
+        "Jadwal kuliah bisa dilihat di menu jadwal di SIAKAD.",
+        "Silakan cek jadwal melalui akun SIAKAD.",
+        "Jadwal tersedia setelah login ke sistem akademik.",
+        "Menu jadwal ada di dashboard SIAKAD.",
+        "Silakan lihat jadwal kuliah di SIAKAD ya."
+      ]
+    },
+
+    {
+      "tag": "bayar_ukt",
+      "patterns": [
+        "cara bayar ukt",
+        "bayar kuliah gimana",
+        "cara pembayaran ukt",
+        "bayar biaya kuliah",
+        "metode pembayaran",
+        "transfer ukt kemana",
+        "bayar kuliah lewat apa",
+        "pembayaran kampus",
+        "cara bayar semester",
+        "bayar kuliah online"
+      ],
+      "responses": [
+        "Pembayaran UKT dapat dilakukan melalui bank yang bekerja sama dengan kampus.",
+        "Silakan cek metode pembayaran di SIAKAD atau website kampus.",
+        "Pembayaran bisa dilakukan via transfer bank.",
+        "Detail pembayaran tersedia di bagian keuangan kampus.",
+        "Silakan ikuti instruksi pembayaran di portal mahasiswa."
+      ]
+    },
+
+    {
+      "tag": "error_siakad",
+      "patterns": [
+        "tidak bisa login sevima",
+        "siakad error",
+        "akun tidak bisa masuk",
+        "login gagal",
+        "kenapa edlink error",
+        "gabisa buka edlink",
+        "akun terkunci",
+        "error sistem kampus",
+        "siakad down",
+        "login bermasalah"
+      ],
+      "responses": [
+        "Jika mengalami kendala login, silakan hubungi admin kampus.",
+        "Pastikan username dan password benar.",
+        "Jika error berlanjut, hubungi bagian IT kampus.",
+        "Silakan coba lagi beberapa saat atau hubungi admin.",
+        "Kemungkinan sistem sedang maintenance."
+      ]
+    },
+    {
+  "tag": "kontak",
+  "patterns": [
+    "kontak kampus",
+    "nomor kampus",
+    "no telp kampus",
+    "hubungi kampus",
+    "kontak admin",
+    "nomor admin kampus",
+    "call center kampus",
+    "cara menghubungi kampus",
+    "info kontak kampus",
+    "alamat email kampus",
+    "wa kampus ada",
+    "nomor whatsapp kampus",
+    "min kontaknya dong",
+    "gimana cara hubungi kampus",
+    "butuh nomor kampus"
+  ],
+  "responses": [
+    "Silakan hubungi kampus melalui nomor resmi atau email yang tersedia di website resmi.",
+    "Untuk informasi lebih lanjut, kamu bisa menghubungi admin kampus ya &#128516;",
+    "Kontak kampus tersedia di website resmi bagian kontak.",
+    "Silakan cek halaman kontak di website kampus untuk nomor dan email resmi.",
+    "Kamu bisa menghubungi kampus melalui telepon atau email yang tersedia.",
+    "Untuk bantuan langsung, silakan hubungi customer service kampus.",
+    "Nomor dan email kampus tersedia di website resmi ya.",
+    "Silakan hubungi pihak kampus melalui kontak resmi yang tersedia."
+  ]
+},
+{
+  "tag": "terimakasih",
+  "patterns": [
+    "terima kasih",
+    "makasih",
+    "makasi ya",
+    "terimakasih",
+    "thanks",
+    "thank you",
+    "makasih banget",
+    "thanks ya",
+    "makasih",
+    "mauliate",
+    "bujur"
+  ],
+  "responses": [
+    "Sama-sama! Senang bisa membantu &#128516;",
+    "Sama-sama ya! Kalau ada pertanyaan lain, silakan tanya lagi.",
+    "Dengan senang hati!",
+    "Sama-sama! Semoga membantu ya.",
+    "Tidak masalah! Senang bisa bantu &#128077;"
+  ]
+}
   ]
 }
