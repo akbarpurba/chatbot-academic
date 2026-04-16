@@ -1,139 +1,133 @@
 {
   "intents": [
     {
-      "tag": "salam",
+      "tag": "greeting",
       "patterns": [
-        "halo", "hai", "haii", "halo bot", "pagi", "selamat pagi",
-        "siang", "selamat siang", "malam", "selamat malam",
-        "hey", "halo gan", "hai bro", "hai kak", "halo min", "woi", "assalamualaikum"
+        "halo",
+        "hai",
+        "hello",
+        "pagi",
+        "selamat pagi",
+        "selamat siang",
+        "selamat malam",
+        "hai bot",
+        "halo min",
+        "permisi",
+        "assalamualaikum",
+        "hi bro",
+        "hai kak",
+        "halo admin",
+        "hi"
       ],
       "responses": [
-        "Halo! Ada yang bisa saya bantu?",
-        "Hai! Mau tanya apa?",
-        "Halo, silakan bertanya 😊"
+        "Halo! &#128075; Ada yang bisa saya bantu terkait kampus?",
+        "Hai! Selamat datang di layanan informasi kampus &#128522;",
+        "Halo, silakan tanya apa saja tentang kampus ya!",
+        "Hai juga! Mau tanya apa hari ini?",
+        "Selamat datang &#128075; Saya siap membantu informasi kampus."
       ]
     },
+
     {
-      "tag": "perpisahan",
+      "tag": "lokasi_kampus",
       "patterns": [
-        "bye", "dadah", "sampai jumpa", "see you",
-        "saya pergi dulu", "makasih ya", "terima kasih",
-        "oke makasih", "cukup itu saja", "selesai"
+        "dimana lokasi kampus",
+        "alamat kampus dimana",
+        "kampusnya di mana",
+        "lokasi universitas pelita nusantara",
+        "kampus penusa dimana ya",
+        "alamat stmik pelita nusantara",
+        "letak kampus dimana",
+        "kampusnya di kota apa",
+        "share lokasi kampus dong",
+        "kampusnya jauh ga",
+        "posisi kampus dimana",
+        "alamat lengkap kampus"
       ],
       "responses": [
-        "Sampai jumpa lagi!",
-        "Terima kasih, semoga harimu menyenangkan!",
-        "Baik, sampai ketemu lagi ya 😊"
+        "Kampus STMIK Pelita Nusantara berada di Medan.",
+        "Lokasi kampus ada di kota Medan ya &#128522;",
+        "Kampus kami berada di Medan, mudah diakses.",
+        "Alamat kampus bisa dilihat di website resmi.",
+        "Kampus PENUSA terletak di Medan."
       ]
     },
-    {
-      "tag": "biaya_kuliah",
-      "patterns": [
-        "berapa biaya kuliah", "uang kuliah berapa", "biaya semester berapa",
-        "kuliah bayar berapa", "berapa spp", "biaya masuk kampus",
-        "kuliah mahal gak", "kisaran biaya kuliah", "biaya kuliah disini"
-      ],
-      "responses": [
-        "Biaya kuliah mulai dari 3 juta per semester",
-        "Kisaran biaya kuliah sekitar 3 juta per semester",
-        "Biaya tergantung jurusan, mulai dari 3 juta"
-      ]
-    },
-    {
-      "tag": "jadwal_kuliah",
-      "patterns": [
-        "jadwal kuliah", "cek jadwal", "jadwal kelas",
-        "kapan jadwal kuliah", "lihat jadwal dimana",
-        "jadwal hari ini", "jadwal minggu ini",
-        "jadwal perkuliahan"
-      ],
-      "responses": [
-        "Jadwal kuliah bisa dilihat di SIAKAD",
-        "Silakan cek jadwal melalui portal akademik",
-        "Jadwal tersedia di sistem SIAKAD kampus"
-      ]
-    },
+
     {
       "tag": "pendaftaran",
       "patterns": [
-        "cara daftar", "daftar kuliah gimana",
-        "bagaimana cara pendaftaran", "info pendaftaran",
-        "cara masuk kampus", "daftar mahasiswa baru",
-        "alur pendaftaran"
+        "cara daftar kuliah",
+        "bagaimana pendaftaran mahasiswa baru",
+        "daftar kuliah gimana",
+        "cara masuk kampus ini",
+        "pendaftaran mahasiswa baru",
+        "alur pendaftaran",
+        "cara daftar online",
+        "gimana cara daftar",
+        "mau daftar kuliah",
+        "info pmb",
+        "daftar penusa gimana",
+        "registrasi mahasiswa baru"
       ],
       "responses": [
-        "Pendaftaran bisa dilakukan melalui website resmi kampus",
-        "Silakan daftar melalui portal PMB kampus",
-        "Ikuti alur pendaftaran di website resmi kampus"
+        "Pendaftaran bisa dilakukan secara online.",
+        "Silakan daftar melalui portal PMB kampus.",
+        "Isi formulir dan lengkapi berkas ya.",
+        "Pendaftaran mahasiswa baru bisa dilakukan online &#128522;",
+        "Cek menu PMB di website kampus."
       ]
     },
+
     {
-      "tag": "jurusan",
+      "tag": "ukt",
       "patterns": [
-        "ada jurusan apa saja", "jurusan di kampus ini",
-        "pilihan jurusan", "daftar jurusan",
-        "kampus ini ada jurusan apa",
-        "jurusan yang tersedia"
+        "berapa biaya kuliah",
+        "ukt berapa",
+        "biaya per semester",
+        "biaya kuliah di sini",
+        "uang kuliah berapa",
+        "kisaran biaya kuliah",
+        "mahal ga kuliahnya",
+        "bayar kuliah berapa",
+        "info biaya kampus",
+        "harga kuliah",
+        "biaya masuk kampus",
+        "total biaya kuliah"
       ],
       "responses": [
-        "Tersedia berbagai jurusan seperti Informatika, Sistem Informasi, dan lainnya",
-        "Jurusan bisa dilihat di website resmi kampus",
-        "Silakan cek daftar jurusan di portal kampus"
+        "Biaya kuliah bervariasi tergantung program studi.",
+        "Untuk info UKT, cek website kampus.",
+        "Biaya tiap jurusan berbeda ya &#128522;",
+        "Silakan hubungi administrasi kampus.",
+        "Info lengkap biaya tersedia di website."
       ]
     },
+
     {
-      "tag": "lokasi",
+      "tag": "kontak",
       "patterns": [
-        "kampus dimana", "alamat kampus",
-        "lokasi kampus", "kampus ini dimana",
-        "alamat lengkap kampus",
-        "letak kampus dimana"
+        "kontak kampus",
+        "nomor kampus",
+        "no telp kampus",
+        "hubungi kampus",
+        "kontak admin",
+        "nomor admin kampus",
+        "call center kampus",
+        "cara menghubungi kampus",
+        "info kontak kampus",
+        "alamat email kampus",
+        "wa kampus ada",
+        "nomor whatsapp kampus",
+        "min kontaknya dong",
+        "gimana cara hubungi kampus",
+        "butuh nomor kampus"
       ],
       "responses": [
-        "Lokasi kampus dapat dilihat di Google Maps atau website resmi",
-        "Alamat kampus tersedia di halaman kontak website",
-        "Silakan cek lokasi kampus melalui Google Maps"
-      ]
-    },
-    {
-      "tag": "beasiswa",
-      "patterns": [
-        "ada beasiswa", "info beasiswa",
-        "cara dapat beasiswa", "beasiswa kampus",
-        "apakah ada beasiswa",
-        "program beasiswa"
-      ],
-      "responses": [
-        "Tersedia beberapa program beasiswa, silakan cek website kampus",
-        "Info beasiswa dapat dilihat di portal kampus",
-        "Beasiswa tersedia untuk mahasiswa berprestasi"
-      ]
-    },
-    {
-      "tag": "login",
-      "patterns": [
-        "tidak bisa login", "gagal login",
-        "kenapa tidak bisa masuk",
-        "login error", "akun tidak bisa login",
-        "masalah login siakad"
-      ],
-      "responses": [
-        "Pastikan username dan password benar",
-        "Silakan hubungi admin jika masih tidak bisa login",
-        "Coba reset password melalui sistem"
-      ]
-    },
-    {
-      "tag": "terima_kasih",
-      "patterns": [
-        "terima kasih", "makasih", "thanks",
-        "thank you", "makasih banyak",
-        "terimakasih ya"
-      ],
-      "responses": [
-        "Sama-sama 😊",
-        "Senang bisa membantu!",
-        "Silakan, kalau ada pertanyaan lagi tanya saja ya"
+        "Silakan hubungi kampus melalui kontak resmi.",
+        "Untuk info lebih lanjut hubungi admin ya &#128522;",
+        "Kontak tersedia di website resmi kampus.",
+        "Cek halaman kontak kampus ya.",
+        "Hubungi kampus via telepon atau email."
       ]
     }
   ]

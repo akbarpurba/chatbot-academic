@@ -1,90 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PENUSA BOT</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-
-    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
-</head>
-<body>
-
-<div class="chat-container">
-
-    <!-- HEADER -->
-    <div class="chat-header">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
         <div class="brand">
-            <div class="avatar-icon">
-                <img src="{{ url_for('static', filename='img/logo.png') }}">
-            </div>
-            <div class="title-section">
-                <h1>PENUSA Bot</h1>
-                <p>STMIK Pelita Nusantara</p>
-            </div>
+          <div class="avatar-icon">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" />
+          </div>
+          <div class="title-section">
+            <h1>PENUSA Bot</h1>
+            <p>STMIK Pelita Nusantara</p>
+          </div>
         </div>
 
         <div class="status-badge">
-            <span class="status-dot"></span>
-            <span>AI aktif · 24/7</span>
+          <span class="status-dot"></span>
+          <span>AI aktif · 24/7</span>
         </div>
 
-        <div style="font-size: 0.7rem; color: #6c86a3; margin-top: 6px;">
-            #SmartCampus
+        <div style="font-size: 0.7rem; color: #6c86a3; margin-top: 6px">
+          #SmartCampus
         </div>
-    </div>
+      </div>
 
-    <!-- CHAT AREA -->
-    <div class="messages-area" id="messagesArea">
+      <div class="messages-area" id="messagesArea">
         <div class="message-row bot-message">
-            <div class="bot-avatar-mini">
-                <div class="avatar-sm">🤖</div>
-            </div>
-            <div class="message-bubble">
-                Halo, saya <strong>PENUSA Bot</strong>! 👋<br>
-                Asisten cerdas <strong>STMIK Pelita Nusantara</strong>.<br>
-                Tanyakan jadwal, biaya, pendaftaran, atau info kampus dengan santai.<br>
-                <span style="font-size:0.75rem; opacity:0.7;">✨ 24/7 siap membantu</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- TYPING -->
-    <div class="typing-indicator" id="typingIndicator" style="display: none;">
-        <div class="bot-avatar-mini">
+          <div class="bot-avatar-mini">
             <div class="avatar-sm">🤖</div>
+          </div>
+          <div class="message-bubble">
+            Halo, saya <strong>PENUSA Bot</strong>! 👋<br />
+            Asisten cerdas <strong>STMIK Pelita Nusantara</strong>.<br />
+            Tanyakan jadwal, biaya, pendaftaran, atau info kampus dengan
+            santai.<br />
+            <span style="font-size: 0.75rem; opacity: 0.7"
+              >✨ 24/7 siap membantu</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator" style="display: none">
+        <div class="bot-avatar-mini">
+          <div class="avatar-sm">🤖</div>
         </div>
         <div class="typing-bubble">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
-    </div>
+      </div>
 
-    <!-- INPUT -->
-    <div class="input-zone">
+      <div class="input-zone">
         <div class="input-wrapper-modern">
-            <input type="text" id="messageInput" placeholder="Tanyakan sesuatu..." autocomplete="off">
-            <button class="send-btn" id="sendBtn" disabled>➤</button>
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Tanyakan sesuatu..."
+            autocomplete="off"
+          />
+          <button class="send-btn" id="sendBtn" disabled>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
         </div>
 
-        <!-- QUICK -->
         <div class="quick-replies" id="quickReplies">
-            <button class="chip" data-query="jadwal kuliah">📅 Jadwal Kuliah</button>
-            <button class="chip" data-query="biaya kuliah">💰 Biaya Kuliah</button>
-            <button class="chip" data-query="pendaftaran">📝 Pendaftaran</button>
-            <button class="chip" data-query="fasilitas kampus">🏛️ Fasilitas</button>
-            <button class="chip" data-query="kontak kampus">📞 Kontak</button>
+          <button class="chip" data-query="jadwal kuliah">
+            📅 Jadwal Kuliah
+          </button>
+          <button class="chip" data-query="biaya kuliah">
+            💰 Biaya Kuliah
+          </button>
+          <button class="chip" data-query="pendaftaran">📝 Pendaftaran</button>
+          <button class="chip" data-query="fasilitas kampus">
+            🏛️ Fasilitas
+          </button>
+          <button class="chip" data-query="kontak kampus">📞 Kontak</button>
         </div>
+      </div>
     </div>
 
-</div>
-
-<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
-
-</body>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  </body>
 </html>
