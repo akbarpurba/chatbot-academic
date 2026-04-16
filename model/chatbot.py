@@ -11,7 +11,7 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
 # === LOAD SLANG JSON ===
-with open('slang.json') as f:
+with open('model\slang.json') as f:
     slang_dict = json.load(f)
 
 def normalize(text):
@@ -67,7 +67,7 @@ def preprocess(text):
 
 
 # === LOAD DATASET ===
-with open('dataset.json') as file:
+with open('model/dataset.json') as file:
     data = json.load(file)
 
 pertanyaan = []
@@ -118,9 +118,3 @@ def chatbot(user_input, k=3, threshold=0.35):
     hasil = Counter(kandidat_label).most_common(1)[0][0]
 
     return random.choice(responses[hasil])
-
-
-# === LOOP CHAT ===
-while True:
-    user = input("Akbar: ")
-    print("Bot:", chatbot(user))
