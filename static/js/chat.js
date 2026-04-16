@@ -3,19 +3,18 @@ const sendBtn = document.getElementById("sendBtn");
 const messagesArea = document.getElementById("messagesArea");
 const typingIndicator = document.getElementById("typingIndicator");
 
-// enable tombol
 input.addEventListener("input", () => {
     sendBtn.disabled = input.value.trim() === "";
 });
 
-// enter kirim
+
 input.addEventListener("keypress", function (e) {
     if (e.key === "Enter") sendMessage();
 });
 
 sendBtn.addEventListener("click", sendMessage);
 
-// quick replies
+
 document.querySelectorAll(".chip").forEach(btn => {
     btn.addEventListener("click", () => {
         input.value = btn.dataset.query;
@@ -23,7 +22,6 @@ document.querySelectorAll(".chip").forEach(btn => {
     });
 });
 
-// fungsi kirim
 async function sendMessage() {
     const message = input.value.trim();
     if (!message) return;
@@ -54,7 +52,6 @@ async function sendMessage() {
     }
 }
 
-// tampilkan pesan
 function addMessage(text, sender) {
     const row = document.createElement("div");
     row.className = `message-row ${sender}-message`;
@@ -72,7 +69,7 @@ function addMessage(text, sender) {
     messagesArea.scrollTop = messagesArea.scrollHeight;
 }
 
-// typing
+
 function showTyping() {
     typingIndicator.style.display = "flex";
 }
