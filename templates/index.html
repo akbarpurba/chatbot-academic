@@ -8,17 +8,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/index.css') }}"
     />
-
     <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" />
   </head>
   <body>
@@ -34,13 +31,14 @@
           </div>
         </div>
 
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          <span>AI aktif · 24/7</span>
-        </div>
-
-        <div style="font-size: 0.7rem; color: #6c86a3; margin-top: 6px">
-          #SmartCampus
+        <div class="header-right">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>AI aktif · 24/7</span>
+          </div>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fa-solid fa-moon"></i>
+          </button>
         </div>
       </div>
 
@@ -86,15 +84,18 @@
         </div>
 
         <div class="quick-replies" id="quickReplies">
-          <button class="chip" data-query="jadwal kuliah">
-            📅 Jadwal Kuliah
+          <button class="chip" data-query="rekomendasi jurusan">
+            ✨ Rekomendasi Jurusan
+          </button>
+           <button class="chip" data-query="persiapan kuliah">
+            ✍🏻 Persiapan Kuliah
           </button>
           <button class="chip" data-query="biaya kuliah">
             💰 Biaya Kuliah
           </button>
           <button class="chip" data-query="pendaftaran">📝 Pendaftaran</button>
-          <button class="chip" data-query="fasilitas kampus">
-            🏛️ Fasilitas
+          <button class="chip" data-query="lokasi kampus">
+            📍 Lokasi
           </button>
           <button class="chip" data-query="kontak kampus">📞 Kontak</button>
         </div>
