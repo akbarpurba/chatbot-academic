@@ -15,32 +15,43 @@ if (savedTheme === 'dark') {
 function updateThemeIcon() {
   const isDark = document.body.classList.contains('dark-mode');
   const icon = themeToggle.querySelector('i');
-  if (isDark) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+  if (icon) {
+    if (isDark) {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
   }
 }
 
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  updateThemeIcon();
-});
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeIcon();
+  });
+}
 
 // ==================== CHAT FUNCTIONS ====================
-input.addEventListener("input", () => {
-  sendBtn.disabled = input.value.trim() === "";
-});
+if (input) {
+  input.addEventListener("input", () => {
+    sendBtn.disabled = input.value.trim() === "";
+  });
 
-input.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") sendMessage();
-});
+  input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+}
 
-sendBtn.addEventListener("click", sendMessage);
+if (sendBtn) {
+  sendBtn.addEventListener("click", sendMessage);
+}
 
 document.querySelectorAll(".chip").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -49,27 +60,42 @@ document.querySelectorAll(".chip").forEach((btn) => {
   });
 });
 
+// ==================== FUNGSI FORMAT PESAN (DENGAN DUKUNGAN **BOLD**) ====================
+function formatBotMessage(text) {
+  // JANGAN escape HTML terlebih dahulu - biarkan tag HTML tetap utuh
+  let formatted = text;
+  
+  // =========================
+  // FORMAT DOUBLE BINTANG (**teks**) MENJADI <strong>teks</strong>
+  // =========================
+  // Pola: **teks** (non-greedy, tidak termasuk tag HTML di dalamnya)
+  formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
+  // Ubah newline menjadi <br>
+  formatted = formatted.replace(/\n/g, '<br>');
+  
+  // Format bullet points (•) - hanya jika bukan bagian dari tag HTML
+  formatted = formatted.replace(/(?![^<]*>)(•)/g, '<span class="bullet-point">•</span>');
+  
+  // Format nomor (1., 2., 3., dll) - hanya jika bukan bagian dari tag HTML
+  formatted = formatted.replace(/(?![^<]*>)(\d+)\./g, '<span class="number-point">$1.</span>');
+  
+  // Format teks tebal untuk judul (teks diikuti titik dua) - HINDARI DOUBLE BINTANG YANG SUDAH DIPROSES
+  // Gunakan negative lookbehind untuk menghindari teks yang sudah dalam tag <strong>
+  formatted = formatted.replace(/^([^<strong>][^<br>]*?):/gm, '<strong>$1:</strong>');
+  formatted = formatted.replace(/\n([^<strong>][^<br>]*?):/g, '\n<strong>$1:</strong>');
+  
+  return formatted;
+}
+
+// ==================== DECODE HTML UNTUK KOPI ====================
 function decodeHTML(html) {
   const txt = document.createElement("textarea");
   txt.innerHTML = html;
   return txt.value;
 }
 
-function formatBotMessage(text) {
-  let formatted = text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-  
-  formatted = formatted.replace(/\n/g, "<br>");
-  formatted = formatted.replace(/•/g, '<span class="bullet-point">•</span>');
-  formatted = formatted.replace(/(\d+)\./g, '<span class="number-point">$1.</span>');
-  
-  return formatted;
-}
-
+// ==================== SEND MESSAGE ====================
 async function sendMessage() {
   const message = input.value.trim();
   if (!message) return;
@@ -90,15 +116,19 @@ async function sendMessage() {
     const data = await res.json();
     hideTyping();
 
+    // Decode HTML untuk mendapatkan teks asli
     const decodedReply = decodeHTML(data.reply);
+    // Format pesan tanpa escape HTML
     const formattedReply = formatBotMessage(decodedReply);
     addMessage(formattedReply, "bot");
   } catch (err) {
+    console.error("Error:", err);
     hideTyping();
     addMessage("Maaf, terjadi kesalahan. Silakan coba lagi.", "bot");
   }
 }
 
+// ==================== ADD MESSAGE TO CHAT ====================
 function addMessage(text, sender) {
   const row = document.createElement("div");
   row.className = `message-row ${sender}-message`;
@@ -116,9 +146,11 @@ function addMessage(text, sender) {
       </div>
     `;
   } else {
+    // Untuk user message, escape HTML untuk keamanan
+    const safeText = escapeHtml(text);
     row.innerHTML = `
       <div class="message-bubble">
-        <div class="message-text">${text}</div>
+        <div class="message-text">${safeText}</div>
         <button class="copy-msg-btn" title="Salin">
           <i class="fa-regular fa-copy"></i>
         </button>
@@ -129,30 +161,59 @@ function addMessage(text, sender) {
   messagesArea.appendChild(row);
   messagesArea.scrollTop = messagesArea.scrollHeight;
 
+  // Add copy button functionality
   const copyBtn = row.querySelector(".copy-msg-btn");
   if (copyBtn) {
     const icon = copyBtn.querySelector("i");
     copyBtn.addEventListener("click", () => {
-      const plainText = row.querySelector(".message-text").innerText;
+      // Ambil teks asli (untuk bot, ambil innerText yang sudah di-decode)
+      let plainText;
+      if (sender === "bot") {
+        // Buat elemen temporary untuk decode HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = row.querySelector(".message-text").innerHTML;
+        plainText = tempDiv.textContent || tempDiv.innerText || "";
+      } else {
+        plainText = row.querySelector(".message-text").innerText;
+      }
+      
       navigator.clipboard.writeText(plainText).then(() => {
-        icon.classList.remove("fa-copy");
-        icon.classList.add("fa-check");
-        copyBtn.classList.add("copied");
+        if (icon) {
+          icon.classList.remove("fa-copy");
+          icon.classList.add("fa-check");
+          copyBtn.classList.add("copied");
+        }
         setTimeout(() => {
-          icon.classList.remove("fa-check");
-          icon.classList.add("fa-copy");
-          copyBtn.classList.remove("copied");
+          if (icon) {
+            icon.classList.remove("fa-check");
+            icon.classList.add("fa-copy");
+            copyBtn.classList.remove("copied");
+          }
         }, 1500);
+      }).catch(err => {
+        console.error("Copy failed:", err);
       });
     });
   }
 }
 
+// ==================== ESCAPE HTML UNTUK KEAMANAN ====================
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// ==================== TYPING INDICATOR ====================
 function showTyping() {
-  typingIndicator.style.display = "flex";
-  messagesArea.scrollTop = messagesArea.scrollHeight;
+  if (typingIndicator) {
+    typingIndicator.style.display = "flex";
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+  }
 }
 
 function hideTyping() {
-  typingIndicator.style.display = "none";
+  if (typingIndicator) {
+    typingIndicator.style.display = "none";
+  }
 }

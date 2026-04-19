@@ -2,692 +2,188 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": [
-        "halo",
-        "hai",
-        "hello",
-        "hi",
-        "assalamualaikum",
-        "pagi",
-        "siang",
-        "malam",
-        "woi",
-        "hey",
-        "hallo",
-        "helo",
-        "selamat pagi",
-        "selamat siang",
-        "selamat malam",
-        "good morning",
-        "good afternoon",
-        "good evening",
-        "yo",
-        "hai juga",
-        "halo bot",
-        "hai bot",
-        "pagi bot",
-        "siang bot",
-        "malam bot",
-        "assalamu'alaikum",
-        "wr wb",
-        "halo penusa",
-        "hai penusa",
-        "met pagi",
-        "met siang",
-        "met malam",
-        "selamat datang",
-        "hey bot",
-        "hi there",
-        "horas",
-        "horas ma",
-        "horas bang",
-        "horas da",
-        "mejuah-juah",
-        "mejuah juah",
-        "njuah-juah",
-        "njuah juah",
-        "ahoii",
-        "ahoi",
-        "hoii",
-        "horas dongan"
-      ],
+      "patterns": ["halo", "hai", "hello", "hi", "assalamualaikum", "pagi", "siang", "malam", "selamat pagi", "selamat siang", "selamat malam", "horas", "mejuah-juah", "ahoii"],
       "responses": [
-        "Halo! Ada yang bisa saya bantu?",
-        "Hai, selamat datang di PENUSA Bot. Silakan tanya soal kampus ya.",
-        "hi. Ada informasi kampus yang ingin ditanyakan?",
-        "Selamat datang! Saya siap membantu informasi perkuliahan.",
-        "Halo, senang bertemu denganmu. Tanya apa saja tentang kampus."
-      ]
-    },
-    {
-      "tag": "program_studi",
-      "patterns": [
-        "prodi",
-        "program studi",
-        "jurusan",
-        "daftar jurusan",
-        "apa saja jurusan",
-        "jurusan apa saja",
-        "ada jurusan apa",
-        "info jurusan",
-        "pilihan jurusan",
-        "jurusan yang tersedia",
-        "ada prodi apa",
-        "program pendidikan"
-      ],
-      "responses": [
-        "Kampus kami punya 3 program studi: Teknik Informatika (belajar coding & bikin aplikasi), Teknologi Informasi (urusan jaringan & database), dan Bisnis Digital (jualan online & digital marketing). Cocok sama minat kamu yang mana?",
-        "Tersedia 3 jurusan seru: Teknik Informatika (pemrograman), Teknologi Informasi (infrastruktur IT), dan Bisnis Digital (e-commerce & startup). Semua fokus di bidang teknologi ya.",
-        "Program studi yang tersedia: Teknik Informatika (jadi programmer), Teknologi Informasi (jadi network engineer), dan Bisnis Digital (jadi digital marketer atau pengusaha online)."
-      ]
-    },
-    {
-      "tag": "organisasi",
-      "patterns": [
-        "organisasi",
-        "ukm",
-        "bem",
-        "badan eksekutif mahasiswa",
-        "rohis",
-        "kmk",
-        "ukm programming",
-        "ukm olahraga",
-        "ukm seni",
-        "kegiatan mahasiswa"
-      ],
-      "responses": [
-        "Wah, kamu tertarik organisasi? Ada BEM (Badan Eksekutif Mahasiswa), UKM Rohis & KMK (kegiatan keagamaan), UKM Seni Tari, UKM Olahraga (badminton), dan UKM Programming. Banyak pilihan buat ngembangin diri!",
-        "Di kampus ada berbagai UKM dan organisasi lho. Mulai dari BEM, Rohis, KMK, Seni Tari, Olahraga, sampai Programming. Kamu bisa pilih sesuai minat dan bakat.",
-        "Tersedia BEM (organisasi mahasiswa tingkat kampus), UKM keagamaan (Rohis & KMK), UKM Seni Tari, UKM Olahraga, dan UKM Programming. Bergabung bisa tambah pengalaman dan relasi."
-      ]
-    },
-    {
-      "tag": "dosen",
-      "patterns": [
-        "dosen",
-        "pengajar",
-        "tenaga pengajar",
-        "profil dosen",
-        "kualitas dosen"
-      ],
-      "responses": [
-        "Dosen-dosen di sini berpengalaman, ada yang dari akademisi dan praktisi industri. Jadi kamu dapat ilmu teori sekaligus praktik. Profil lengkapnya ada di website kampus ya.",
-        "Tenaga pengajarnya kompeten, banyak yang masih aktif di industri. Kamu akan dibimbing oleh dosen yang ahli di bidangnya. Cek profil mereka di website resmi."
-      ]
-    },
-    {
-      "tag": "jadwal_pmb",
-      "patterns": [
-        "jadwal pmb",
-        "jadwal pendaftaran",
-        "tanggal pendaftaran",
-        "info pmb",
-        "kapan pendaftaran",
-        "pmb kapan"
-      ],
-      "responses": [
-        "Pendaftaran mahasiswa baru biasanya dibuka setiap tahun. Info jadwal lengkapnya ada di website resmi kampus. Pantau terus ya biar tidak ketinggalan.",
-        "Jadwal PMB biasanya awal tahun. Cek website kampus untuk tanggal pastinya. Jangan sampai kelewatan pendaftaran ya!"
-      ]
-    },
-    {
-      "tag": "pendaftaran",
-      "patterns": [
-        "pendaftaran",
-        "daftar",
-        "registrasi",
-        "cara daftar",
-        "proses pendaftaran"
-      ],
-      "responses": [
-        "Cara daftarnya gampang kok. Bisa online lewat portal PMB atau datang langsung ke kampus. Siapkan berkas-berkas yang diperlukan, lalu ikuti alur pendaftarannya.",
-        "Kamu bisa daftar secara online di portal PMB atau langsung ke kampus. Isi formulir, lengkapi berkas, selesai. Ada yang mau ditanyakan lagi?"
-      ]
-    },
-    {
-      "tag": "beasiswa",
-      "patterns": [
-        "beasiswa",
-        "info beasiswa",
-        "kip",
-        "kip kuliah",
-        "beasiswa kip"
-      ],
-      "responses": [
-        "Kampus punya beasiswa KIP Kuliah buat mahasiswa yang membutuhkan. Syarat dan cara daftarnya bisa kamu lihat di website resmi kampus ya.",
-        "Ada beasiswa KIP Kuliah untuk meringankan biaya pendidikan. Cek website kampus untuk info lengkap syarat dan pendaftarannya."
-      ]
-    },
-    {
-      "tag": "fasilitas",
-      "patterns": [
-        "fasilitas",
-        "lab",
-        "wifi",
-        "perpustakaan",
-        "ruang belajar",
-        "mushola"
-      ],
-      "responses": [
-        "Fasilitas kampus cukup lengkap: lab komputer, wifi di seluruh area, perpustakaan, ruang belajar nyaman, dan mushola. Nyaman buat belajar.",
-        "Tersedia lab komputer, wifi kencang, perpustakaan dengan koleksi buku, ruang belajar ber-AC, dan mushola. Semua bisa kamu manfaatkan."
+        "Selamat datang di PENUSA Bot. Saya asisten virtual STMIK Pelita Nusantara. Ada yang bisa saya bantu?",
+        "Halo! Saya PENUSA Bot. Silakan tanyakan info seputar kampus, biaya, pendaftaran, atau jadwal kuliah.",
+        "Hi. Ada yang ingin ditanyakan tentang STMIK Pelita Nusantara?"
       ]
     },
     {
       "tag": "alamat",
-      "patterns": [
-        "alamat",
-        "lokasi",
-        "dimana kampus",
-        "alamat kampus",
-        "lokasi kampus"
-      ],
+      "patterns": ["alamat kampus", "lokasi kampus", "dimana kampus", "kampus dimana", "letak kampus", "alamat", "lokasi"],
       "responses": [
-        "Kampus punya 2 lokasi ya. Kampus 1 di Jl. Iskandar Muda No. 1 Medan. Kampus 2 di Jl. Lintas Sumatera, Tj. Garbus Satu, Lubuk Pakam. Bisa cek Google Maps untuk rutenya.",
-        "Lokasi: Medan (Jl. Iskandar Muda No. 1) dan Lubuk Pakam (Jl. Lintas Sumatera, Tj. Garbus Satu). Keduanya mudah diakses."
+        "📍 STMIK Pelita Nusantara memiliki 2 lokasi:\n\n🏛️ Kampus 1 (Medan)\nJl. Iskandar Muda No. 1, Medan\n🔗 <a href='https://maps.app.goo.gl/zQfDtdUcE9EyiYxt9' target='_blank' rel='noopener noreferrer'>Buka di Google Maps</a>\n\n🏛️ Kampus 2 (Lubuk Pakam)\nJl. Lintas Sumatera, Tj. Garbus Satu, Kec. Lubuk Pakam\n🔗 <a href='https://maps.app.goo.gl/4WGLAnb6FPQQU9BT8' target='_blank' rel='noopener noreferrer'>Buka di Google Maps</a>",
+        "📍 Alamat kampus:\n\n• Kampus 1: Jl. Iskandar Muda No. 1 Medan\n  <a href='https://maps.app.goo.gl/zQfDtdUcE9EyiYxt9' target='_blank' rel='noopener noreferrer'>🗺️ Lihat di Google Maps</a>\n\n• Kampus 2: Jl. Lintas Sumatera, Tj. Garbus Satu, Lubuk Pakam\n  <a href='https://maps.app.goo.gl/4WGLAnb6FPQQU9BT8' target='_blank' rel='noopener noreferrer'>🗺️ Lihat di Google Maps</a>"
       ]
     },
     {
       "tag": "biaya",
-      "patterns": [
-        "biaya",
-        "ukt",
-        "biaya kuliah",
-        "berapa biaya",
-        "biaya per semester"
-      ],
+      "patterns": ["biaya kuliah", "ukt", "biaya per semester", "berapa biaya", "biaya", "ukt berapa"],
       "responses": [
-        "Biaya kuliah per semester: kelas pagi Rp3.500.000, kelas malam Rp3.625.000. Ada opsi cicilan juga kalau perlu.",
-        "Untuk kelas pagi Rp3.500.000/semester, kelas malam Rp3.625.000/semester. Bisa dicicil sampai 5 kali dalam satu semester."
+        "💰 Biaya Kuliah (UKT) per Semester (berlaku untuk semua jurusan)\n\n🏫 Kelas Pagi: Rp 3.500.000\n🌙 Kelas Malam: Rp 3.625.000\n\n📅 Sistem Cicilan 5x:\n\n🏫 Kelas Pagi:\n• Cicilan ke-1: Rp 1.500.000\n• Cicilan ke-2 s/d ke-5: Rp 500.000/bulan\n\n🌙 Kelas Malam:\n• Cicilan ke-1: Rp 1.625.000\n• Cicilan ke-2 s/d ke-5: Rp 500.000/bulan\n\n✅ Biaya sudah termasuk SPP dan fasilitas kampus.\n📌 Tersedia beasiswa KIP Kuliah.",
+        "📊 UKT STMIK Pelita Nusantara\n\nKelas Pagi: Rp 3.500.000\nKelas Malam: Rp 3.625.000\n\nCicilan 5x:\n• Pagi: Rp 1.500.000, lanjut Rp 500.000 x4\n• Malam: Rp 1.625.000, lanjut Rp 500.000 x4"
       ]
     },
     {
       "tag": "cicilan_ukt",
-      "patterns": [
-        "cicilan",
-        "cicil ukt",
-        "angsuran",
-        "bayar cicil",
-        "cicil kuliah"
-      ],
+      "patterns": ["cicilan", "cicil ukt", "angsuran", "bayar cicil", "bisa dicicil", "dicicil", "bayar bertahap"],
       "responses": [
-        "Kabar baik! UKT bisa dicicil hingga 5 kali dalam satu semester. Jadi tidak perlu bayar sekaligus di awal. Ringan, kan?",
-        "Tersedia sistem cicilan 5 kali per semester. Kamu bisa bayar bertahap, lebih ringan di kantong."
+        "📅 Sistem Cicilan UKT (berlaku untuk semua jurusan)\n\nUKT dapat dicicil hingga 5 kali dalam satu semester.\n\n🏫 Kelas Pagi (Rp 3.500.000):\n• Cicilan ke-1: Rp 1.500.000\n• Cicilan ke-2 s/d ke-5: Rp 500.000/bulan\n\n🌙 Kelas Malam (Rp 3.625.000):\n• Cicilan ke-1: Rp 1.625.000\n• Cicilan ke-2 s/d ke-5: Rp 500.000/bulan\n\nPilih opsi cicilan saat registrasi ulang di SIAKAD.",
+        "💳 Cicilan 5x per Semester\n\nKelas Pagi: DP Rp 1.500.000 + 4x Rp 500.000\nKelas Malam: DP Rp 1.625.000 + 4x Rp 500.000\n\n⚠️ Bayar tepat waktu untuk menghindari denda."
       ]
     },
     {
-      "tag": "kontak",
-      "patterns": ["kontak", "nomor", "email", "hubungi", "no admin"],
+      "tag": "pendaftaran",
+      "patterns": ["pendaftaran", "cara daftar", "daftar kuliah", "registrasi", "pmb"],
       "responses": [
-        "Kamu bisa hubungi admin lewat kontak yang tersedia di website resmi kampus. Atau datang langsung ke kantor administrasi ya.",
-        "Cek website kampus untuk nomor telepon dan email admin. Kalau butuh bantuan langsung, datang saja ke kampus."
+        "📝 Pendaftaran Mahasiswa Baru\n\n✅ Biaya Pendaftaran: GRATIS\n✅ Biaya Jaket Almamater + PKKMB: Rp 525.000 (dibayar sekali saat mendaftar)\n\n📋 Berkas yang diperlukan:\n1. Fotokopi Ijazah/SKHU/SKTL (pilih salah satu) = 2 lembar\n2. Fotokopi KTP = 2 lembar\n3. Fotokopi KK = 2 lembar\n4. Pas foto warna terbaru ukuran 3x4 = 2 lembar\n5. Membayar Jaket Almamater + PKKMB dan UKT cicilan ke-1\n\n🌐 Daftar online: <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>pmb.pelitanusantara.ac.id</a>",
+        "📝 Syarat Pendaftaran:\n\n✅ Biaya pendaftaran GRATIS\n✅ Jaket + PKKMB: Rp 525.000\n\n📋 Berkas:\n• Ijazah/SKHU/SKTL (2 lembar)\n• KTP (2 lembar)\n• KK (2 lembar)\n• Pas foto 3x4 (2 lembar)\n\n🌐 <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>Daftar di sini</a>"
       ]
     },
     {
-      "tag": "krs",
-      "patterns": [
-        "krs",
-        "isi krs",
-        "lihat krs",
-        "kartu rencana studi",
-        "pengisian krs"
-      ],
+      "tag": "website_kampus",
+      "patterns": ["website kampus", "web kampus", "situs kampus", "link kampus", "pmb", "pmb.pelitanusantara"],
       "responses": [
-        "KRS bisa diisi lewat SIAKAD ya. Login dulu, masuk ke menu Akademik, lalu pilih Kartu Rencana Studi. Mudah kok.",
-        "Caranya: login SIAKAD → menu Akademik → Kartu Rencana Studi. Di situ kamu bisa pilih mata kuliah yang mau diambil."
+        "🌐 Website Resmi STMIK Pelita Nusantara\n\n🔗 <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>https://pmb.pelitanusantara.ac.id</a>\n\nDi website tersebut tersedia info PMB, program studi, biaya kuliah, kalender akademik, dan pengumuman penting.",
+        "🔗 <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>pmb.pelitanusantara.ac.id</a>\n\nSumber informasi resmi untuk pendaftaran dan berita kampus."
       ]
     },
     {
-      "tag": "khs",
-      "patterns": ["khs", "nilai", "lihat nilai", "cek nilai", "hasil studi"],
+      "tag": "akses_siakad",
+      "patterns": ["akses siakad", "login siakad", "cara login siakad", "masuk siakad", "siakad", "edlink"],
       "responses": [
-        "Nilai atau KHS bisa dicek di SIAKAD. Login, masuk ke menu Akademik, lalu pilih Nilai Mahasiswa. Semua nilai akan muncul di sana.",
-        "Cek nilai: login SIAKAD → Akademik → Nilai Mahasiswa. Kalau belum muncul, mungkin dosen belum input. Sabar ya."
-      ]
-    },
-    {
-      "tag": "bayar_ukt",
-      "patterns": ["bayar ukt", "pembayaran", "transfer", "cara bayar"],
-      "responses": [
-        "Nomor BRIVA untuk bayar UKT akan dikasih oleh admin kampus. Hubungi admin dulu ya, nanti dapat nomor VA, lalu transfer ke nomor tersebut.",
-        "Caranya: hubungi admin minta nomor BRIVA, dapat nomor VA, lalu transfer sesuai nominal. Jangan lupa simpan bukti bayarnya."
-      ]
-    },
-    {
-      "tag": "login_issue",
-      "patterns": ["login", "gagal login", "tidak bisa login", "error login"],
-      "responses": [
-        "Cek lagi NIM/Email dan password kamu. Pastikan tidak salah ketik. Kalau lupa password, klik 'Lupa Password'. Masih gabisa? Hubungi admin ya.",
-        "Pastikan NIM/Email dan password benar. Coba reset password lewat fitur Lupa Password. Kalau masih error, hubungi admin kampus."
-      ]
-    },
-    {
-      "tag": "reset_password",
-      "patterns": ["reset password", "lupa password", "ganti password"],
-      "responses": [
-        "Klik 'Lupa Password' di halaman login, masukkan email atau NIM kamu. Nanti akan dikirim panduan reset ke email. Ikuti instruksinya ya.",
-        "Gampang kok. Tekan Lupa Password, masukkan email/NIM, cek email kamu, klik tautan yang dikirim, lalu buat password baru."
-      ]
-    },
-    {
-      "tag": "login_email_problem",
-      "patterns": [
-        "lupa email",
-        "email lupa",
-        "email akun",
-        "tidak ingat email"
-      ],
-      "responses": [
-        "Kalau lupa email, langsung hubungi admin kampus saja. Mereka akan verifikasi data dan membantu memulihkan email akun kamu.",
-        "Silakan hubungi admin atau datang ke bagian administrasi kampus. Nanti akan dibantu cek dan pemulihan email akun."
-      ]
-    },
-    {
-      "tag": "cara_hubungi_admin",
-      "patterns": ["hubungi admin", "kontak admin", "cara hubungi admin"],
-      "responses": [
-        "Cek kontak admin di website resmi kampus. Bisa lewat telepon, email, atau datang langsung ke kantor administrasi. Siap membantu kok.",
-        "Kunjungi website kampus, buka halaman kontak. Di sana ada nomor telepon dan email admin. Kamu bisa hubungi kapan saja."
-      ]
-    },
-    {
-      "tag": "siakad_error",
-      "patterns": ["siakad error", "error siakad", "siakad tidak bisa dibuka"],
-      "responses": [
-        "Mungkin SIAKAD sedang maintenance. Coba beberapa saat lagi ya. Kalau masih error, laporkan ke admin kampus.",
-        "Coba refresh halaman atau tunggu sebentar. Kalau masih tidak bisa, hubungi admin untuk dibantu."
-      ]
-    },
-    {
-      "tag": "nilai_tidak_muncul",
-      "patterns": ["nilai kosong", "nilai belum keluar", "nilai tidak muncul"],
-      "responses": [
-        "Nilai belum muncul biasanya karena dosen belum input. Cek secara berkala ya. Kalau sudah lama, coba tanyakan ke dosen atau bagian akademik.",
-        "Masih diproses mungkin. Tunggu beberapa hari lagi. Kalau sudah lewat sebulan, hubungi bagian akademik untuk ditindaklanjuti."
-      ]
-    },
-    {
-      "tag": "terimakasih",
-      "patterns": ["terima kasih", "makasih", "thanks", "thank you"],
-      "responses": [
-        "Sama-sama! 😊 Senang bisa membantu. Kalau ada yang ditanyakan lagi, jangan sungkan ya.",
-        "Sama-sama. Silakan tanya lagi kalau butuh info lain tentang kampus."
-      ]
-    },
-    {
-      "tag": "jadwal_kuliah",
-      "patterns": ["jadwal kuliah", "jadwal kelas", "jam kuliah"],
-      "responses": [
-        "Jadwal kuliah bisa kamu lihat di SIAKAD. Masuk ke menu Akademik, lalu pilih Jadwal Kelas. Di situ lengkap hari, jam, dan ruangannya.",
-        "Cek jadwal kuliah lewat SIAKAD ya. Login dulu, lalu buka menu Akademik → Jadwal Kelas. Kalau ada kendala, hubungi admin."
+        "💻 Cara Akses SIAKAD\n\n1️⃣ Via Website\n🔗 <a href='https://pelitanusantara.siakadcloud.com/' target='_blank' rel='noopener noreferrer'>https://pelitanusantara.siakadcloud.com/</a>\n\n2️⃣ Via Aplikasi EdLink\n📱 Download di Play Store (Android) atau App Store (iOS)\n\nLogin menggunakan NIM dan password.",
+        "🔐 Login SIAKAD\n\nWebsite: <a href='https://pelitanusantara.siakadcloud.com/' target='_blank' rel='noopener noreferrer'>Klik di sini</a>\nAplikasi: EdLink\n\nGunakan NIM dan password untuk akses KRS, KHS, jadwal."
       ]
     },
     {
       "tag": "penusa_bot",
-      "patterns": ["penusa bot itu apa", "siapa kamu", "kamu siapa"],
+      "patterns": ["siapa kamu", "kamu siapa", "kau ni ape", "bot ini apa", "penusa bot itu apa", "perkenalan"],
       "responses": [
-        "Saya PENUSA Bot 🤖, asisten virtual kampus. Saya di sini buat bantu kamu cari info tentang biaya kuliah, jadwal, pendaftaran, organisasi, dan lain-lain. Tanya aja ya!",
-        "Halo! Saya chatbot resmi kampus. Tugas saya membantu mahasiswa dan calon mahasiswa mendapatkan informasi seputar kampus dengan cepat. Ada yang bisa dibantu?"
+        "🤖 Saya PENUSA Bot, asisten virtual STMIK Pelita Nusantara.\n\nSaya membantu informasi seputar:\n✅ Biaya kuliah & cicilan\n✅ Pendaftaran & jadwal\n✅ Program studi & rekomendasi jurusan\n✅ Fasilitas & akses SIAKAD\n\nAda yang bisa saya bantu?",
+        "Halo! Saya PENUSA Bot, chatbot resmi kampus. Tanyakan info perkuliahan, biaya UKT, atau pendaftaran."
       ]
     },
-      {
-      "tag": "ti",
-      "patterns": [
-        "teknik informatika", "ti itu apa", "jurusan ti", "info ti",
-        "info teknik informatika", "apa itu teknik informatika",
-        "jelaskan teknik informatika", "detail teknik informatika",
-        "jurusan teknik informatika", "belajar apa di teknik informatika",
-        "prospek teknik informatika", "kuliah teknik informatika"
-      ],
+    {
+      "tag": "program_studi",
+      "patterns": ["program studi", "jurusan", "prodi", "daftar jurusan", "apa saja jurusan"],
       "responses": [
-        "💻 Teknik Informatika\n\n📖 Deskripsi: Fokus pada pemrograman, pengembangan software, AI, keamanan siber, dan game development.\n\n📚 Mata kuliah: Pemrograman Web, Mobile Development, AI, Machine Learning, Struktur Data, Algoritma, Matematika Diskrit, Kriptografi, Keamanan Siber\n\n💼 Prospek kerja: Software Engineer, Web Developer, Mobile Developer, Data Scientist, AI Engineer, Game Developer, Cyber Security Analyst, Ethical Hacker"
-      ],
-      "context_set": "akademik"
+        "📚 Program Studi STMIK Pelita Nusantara\n\n1️⃣ Teknik Informatika - Coding, AI, Game Development\n2️⃣ Teknologi Informasi - Jaringan, Server, Cloud Computing\n3️⃣ Bisnis Digital - E-commerce, Digital Marketing, Startup\n\n💡 UKT berlaku sama untuk semua jurusan (pagi Rp 3.500.000, malam Rp 3.625.000)",
+        "Tersedia 3 jurusan:\n• 💻 Teknik Informatika\n• 📡 Teknologi Informasi\n• 📊 Bisnis Digital\n\nKetik nama jurusan untuk info detail."
+      ]
     },
-    
+    {
+      "tag": "ti",
+      "patterns": ["teknik informatika", "jurusan teknik informatika", "info teknik informatika"],
+      "responses": [
+        "💻 Teknik Informatika\n\n📖 Deskripsi: Fokus pada pemrograman, pengembangan software, AI, dan game development.\n\n📚 Mata kuliah: Pemrograman Web, Mobile Development, AI, Machine Learning, Struktur Data, Algoritma, Keamanan Siber.\n\n💼 Prospek kerja: Software Engineer, Web Developer, Mobile Developer, Data Scientist, AI Engineer, Game Developer.\n\n🎯 Cocok untuk: Anda yang suka coding dan membuat aplikasi.\n\n💰 UKT: Pagi Rp 3.500.000, Malam Rp 3.625.000 (bisa dicicil)",
+        "Jurusan Teknik Informatika: belajar coding, database, AI. Prospek: programmer, web dev, game dev. UKT: pagi Rp 3.500.000, malam Rp 3.625.000."
+      ]
+    },
     {
       "tag": "teknologi_informasi",
-      "patterns": [
-        "teknologi informasi", "ti itu apa", "jurusan ti", "info ti",
-        "info teknologi informasi", "apa itu teknologi informasi",
-        "jelaskan teknologi informasi", "detail teknologi informasi",
-        "jurusan jaringan", "info jaringan", "apa itu jaringan komputer",
-        "teknologi informasi itu apa", "pengertian teknologi informasi",
-        "belajar apa di teknologi informasi", "prospek teknologi informasi"
-      ],
+      "patterns": ["teknologi informasi", "jurusan teknologi informasi", "info teknologi informazioni", "jurusan jaringan"],
       "responses": [
-        "📡 Teknologi Informasi\n\n📖 Deskripsi: Fokus pada jaringan komputer, administrasi server, database, cloud computing, dan IT support.\n\n📚 Mata kuliah: Jaringan Komputer, Administrasi Server, Database, Keamanan Jaringan, Cloud Computing, Tata Kelola TI\n\n💼 Prospek kerja: Network Engineer, Database Administrator, IT Support, System Administrator, Cloud Engineer, Teknisi Jaringan, Admin Warnet"
-      ],
-      "context_set": "akademik"
+        "📡 Teknologi Informasi\n\n📖 Deskripsi: Fokus pada jaringan komputer, administrasi server, database, dan cloud computing.\n\n📚 Mata kuliah: Jaringan Komputer, Administrasi Server, Database, Keamanan Jaringan, Cloud Computing, Tata Kelola TI.\n\n💼 Prospek kerja: Network Engineer, IT Support, Cloud Engineer, Database Administrator, System Administrator.\n\n🎯 Cocok untuk: Anda yang suka jaringan dan infrastruktur IT.\n\n💰 UKT: Pagi Rp 3.500.000, Malam Rp 3.625.000 (bisa dicicil)",
+        "Jurusan Teknologi Informasi: belajar jaringan, server, cloud. Prospek: network engineer, IT support. UKT: pagi Rp 3.500.000, malam Rp 3.625.000."
+      ]
     },
-    
     {
       "tag": "bisnis_digital",
-      "patterns": [
-        "bisnis digital", "jurusan bisnis", "info bisnis", "info bisnis digital",
-        "apa itu bisnis digital", "jelaskan bisnis digital", "detail bisnis digital",
-        "jurusan bisnis digital", "belajar apa di bisnis digital",
-        "prospek bisnis digital", "bisnis digital itu apa",
-        "pengertian bisnis digital", "kuliah bisnis digital"
-      ],
+      "patterns": ["bisnis digital", "jurusan bisnis digital", "info bisnis digital", "jurusan bisnis"],
       "responses": [
-        "📊 Bisnis Digital\n\n📖 Deskripsi: Menggabungkan ilmu bisnis dengan teknologi digital, fokus pada e-commerce, digital marketing, dan trading online.\n\n📚 Mata kuliah: E-commerce, Digital Marketing, Manajemen Startup, UI/UX Design, Content Marketing, Analisis Pasar Digital, Cryptocurrency, Kewirausahaan\n\n💼 Prospek kerja: Digital Marketer, E-commerce Specialist, Social Media Strategist, Pengusaha Startup, Trader, Financial Analyst, Dosen Bisnis, Guru SMK Pemasaran"
-      ],
-      "context_set": "akademik"
-    },
-    {
-      "tag": "lihat_data_mahasiswa",
-      "patterns": [
-        "lihat data mahasiswa",
-        "data mahasiswa",
-        "profil mahasiswa",
-        "biodata mahasiswa",
-        "data diri mahasiswa",
-        "lihat biodata",
-        "cek data mahasiswa",
-        "data pribadi mahasiswa",
-        "info data mahasiswa",
-        "profil saya",
-        "data diri saya",
-        "lihat profil mahasiswa",
-        "biodata saya",
-        "data mahasiswa di siakad",
-        "cek profil siakad",
-        "profil di siakad",
-        "data diri di siakad",
-        "lihat data diri",
-        "data mahasiswa dimana",
-        "nim",
-        "lihat nim",
-        "nomor induk mahasiswa"
-      ],
-      "responses": [
-        "Data mahasiswa bisa dilihat di SIAKAD ya. Login dulu, lalu masuk ke menu Profil atau Data Mahasiswa. Di sana kamu bisa lihat NIM, nama, program studi, dan biodata lengkapmu.",
-        "Caranya: login ke SIAKAD, lalu pilih menu 'Profil Mahasiswa' atau 'Data Pribadi'. Semua data diri kamu seperti NIM, nama, alamat, dan program studi akan tampil di sana.",
-        "Kamu bisa cek data mahasiswa di SIAKAD. Setelah login, buka menu 'Data Mahasiswa' atau 'Biodata'. Kalau ada data yang salah, segera laporkan ke bagian akademik ya.",
-        "Untuk melihat data mahasiswa, silakan login ke SIAKAD. Pilih menu 'Profil' atau 'Data Diri'. Di halaman tersebut kamu bisa melihat dan memeriksa kelengkapan data pribadimu."
-      ],
-      "context_set": "akademik"
-    },
-    {
-      "tag": "kalender_akademik",
-      "patterns": [
-        "kalender akademik",
-        "kalender pendidikan",
-        "jadwal akademik",
-        "tanggal penting kampus",
-        "kalender kampus",
-        "jadwal semester",
-        "tanggal ujian",
-        "jadwal uts",
-        "jadwal uas",
-        "libur kampus",
-        "tanggal libur",
-        "jadwal libur",
-        "kalender siakad",
-        "lihat kalender akademik",
-        "kapan uts",
-        "kapan uas",
-        "jadwal perkuliahan semester",
-        "tanggal penting akademik"
-      ],
-      "responses": [
-        "Kalender akademik bisa dilihat di SIAKAD ya. Login dulu, lalu masuk ke menu Kalender Akademik. Di sana ada jadwal UTS, UAS, libur, dan tanggal penting lainnya.",
-        "Cek kalender akademik lewat SIAKAD. Setelah login, buka menu Kalender atau Jadwal Akademik. Semua tanggal penting seperti UTS, UAS, dan libur kampus ada di sana.",
-        "Kalender akademik tersedia di SIAKAD. Kamu bisa lihat jadwal UTS, UAS, tenggat KRS, dan hari libur. Pantau terus biar tidak ketinggalan momen penting ya."
-      ],
-      "context_set": "akademik"
-    },
-    {
-      "tag": "lihat_ruang_kelas",
-      "patterns": [
-        "lihat ruang kelas",
-        "ruang kelas",
-        "lokasi ruang kelas",
-        "kelas dimana",
-        "ruang kuliah",
-        "dimana ruang kelas",
-        "cari ruang kelas",
-        "monitor kampus",
-        "ruang kelas siakad",
-        "cek ruang kelas",
-        "jadwal ruang kelas",
-        "ruang perkuliahan"
-      ],
-      "responses": [
-        "Ruang kelas bisa dilihat di SIAKAD atau monitor kampus. Di SIAKAD, buka menu Jadwal Kelas nanti muncul ruangannya. Kalau di kampus, ada monitor TV yang menampilkan info ruang kelas.",
-        "Cek ruang kelas lewat SIAKAD di menu Jadwal Kuliah. Atau lihat langsung di monitor yang ada di area kampus, biasanya tertera jadwal dan ruang perkuliahan.",
-        "Kamu bisa lihat ruang kelas dari SIAKAD setelah login, atau lihat di monitor kampus yang tersedia di lobi gedung. Cukup mudah kok."
-      ],
-      "context_set": "akademik"
-    },
-    {
-      "tag": "website_kampus",
-      "patterns": [
-        "website kampus",
-        "situs kampus",
-        "link kampus",
-        "alamat website",
-        "website resmi kampus",
-        "pmb kampus",
-        "portal kampus",
-        "website pmb",
-        "link pendaftaran",
-        "situs resmi",
-        "website penusa",
-        "pmb.pelitanusantara"
-      ],
-      "responses": [
-        "Website resmi kampus: https://pmb.pelitanusantara.ac.id. Di sana kamu bisa cek info PMB, program studi, biaya, dan pengumuman penting lainnya.",
-        "Ini link website kampus: https://pmb.pelitanusantara.ac.id. Buka untuk informasi pendaftaran, kalender akademik, dan berita terbaru dari kampus.",
-        "Website resmi kami ada di https://pmb.pelitanusantara.ac.id. Kunjungi ya untuk info lengkap seputar kampus dan pendaftaran mahasiswa baru."
-      ],
-      "context_set": "info"
-    },
-    {
-      "tag": "pujian_bot",
-      "patterns": [
-        "bot keren",
-        "botnya keren",
-        "keren bot",
-        "pintar bot",
-        "botnya pintar",
-        "bot bagus",
-        "kamu keren",
-        "kamu pintar",
-        "kamu hebat",
-        "good bot",
-        "nice bot",
-        "bot mantap",
-        "botnya mantap",
-        "keren sih botnya"
-      ],
-      "responses": [
-        "Terima kasih ya! 😊 Senang banget bisa membantu. Kalau ada saran buat pengembangan saya, boleh disampaikan ke developer melalui kontak yang tersedia di website kampus.",
-        "Makasih pujiannya! 🙏 Saya masih belajar juga. Kalau ada masukan atau kritik membangun, silakan hubungi developer ya. Semoga saya bisa terus lebih baik.",
-        "Terima kasih! 😄 Masukan dari pengguna sangat berharga buat saya. Kalau ada fitur yang kamu mau atau ada yang kurang, bilang saja ke developer lewat website kampus ya."
-      ],
-      "context_set": "general"
-    },
-    {
-      "tag": "hinaan_kritik",
-      "patterns": [
-        "goblok",
-        "bodoh",
-        "paok kali",
-        "bungul",
-        "ga guna",
-        "bot gak jelas",
-        "bot tolol",
-        "tolol",
-        "bego",
-        "asu",
-        "bot jancok",
-        "bot bodat",
-        "jelek",
-        "bodoh kali",
-        "botot",
-        "bot apalah",
-        "bot kurang kerjaan"
-      ],
-      "responses": [
-        "Wajar boy, gweh cuma bot, bukan manusia. Manusia aja ga ada yang sempurna. Tapi kalau ada kritik membangun, sampaikan ke developer ya biar saya bisa lebih baik.",
-        "Hehe, wajar lah. Saya bot, pasti ada kurangnya. Manusia aja tidak sempurna. Tapi kritiknya diterima kok, nanti saya laporkan ke developer.",
-        "Maaf kalau kurang memuaskan. Saya bot biasa, masih banyak belajar. Manusia aja tidak ada yang sempurna. Kalau ada saran, hubungi developer lewat website ya."
-      ],
-      "context_set": "general"
-    },
-    {
-      "tag": "akses_siakad",
-      "patterns": [
-        "akses siakad",
-        "cara login siakad",
-        "masuk siakad",
-        "login siakad",
-        "cara akses siakad",
-        "siakad login",
-        "masuk ke siakad",
-        "buka siakad",
-        "siakad dimana",
-        "link siakad",
-        "website siakad",
-        "aplikasi siakad",
-        "download siakad",
-        "siakad online",
-        "siakad web",
-        "siakad cloud",
-        "pelitanusantara siakad",
-        "siakad pelita",
-        "login ke siakad"
-      ],
-      "responses": [
-        "Ada 2 cara akses SIAKAD ya. Pertama, buka website https://pelitanusantara.siakadcloud.com/gate/login. Kedua, download aplikasi EdLink di Play Store atau App Store, lalu login dengan akun kamu.",
-        "Cara login SIAKAD: bisa lewat website https://pelitanusantara.siakadcloud.com/gate/login atau pakai aplikasi EdLink. Pilih yang paling nyaman buat kamu.",
-        "Akses SIAKAD gampang kok. Buka link https://pelitanusantara.siakadcloud.com/gate/login atau download EdLink di HP. Login pakai NIM dan password yang sudah diberikan."
-      ],
-      "context_set": "akademik"
-    },
-    {
-      "tag": "lupa_nim",
-      "patterns": [
-        "lupa nim",
-        "nim lupa",
-        "nim saya apa",
-        "cari nim",
-        "nim berapa",
-        "nim hilang",
-        "tidak ingat nim"
-      ],
-      "responses": [
-        "Kalau lupa NIM, bisa cek di kartu mahasiswa atau hubungi admin kampus. Admin akan verifikasi data kamu lalu memberikan NIM.",
-        "Hubungi admin kampus atau bagian akademik ya. Nanti akan diverifikasi pakai data diri seperti nama lengkap, tanggal lahir, dan program studi."
+        "📊 Bisnis Digital\n\n📖 Deskripsi: Menggabungkan ilmu bisnis dengan teknologi digital, fokus pada e-commerce, digital marketing, dan startup.\n\n📚 Mata kuliah: E-commerce, Digital Marketing, Manajemen Startup, UI/UX Design, Content Marketing, Kewirausahaan.\n\n💼 Prospek kerja: Digital Marketer, E-commerce Specialist, Social Media Strategist, Pengusaha Startup, Trader.\n\n🎯 Cocok untuk: Anda yang suka bisnis online dan digital marketing.\n\n💰 UKT: Pagi Rp 3.500.000, Malam Rp 3.625.000 (bisa dicicil)",
+        "Jurusan Bisnis Digital: belajar e-commerce, digital marketing, startup. Prospek: digital marketer, pengusaha startup. UKT: pagi Rp 3.500.000, malam Rp 3.625.000."
       ]
     },
     {
-      "tag": "ganti_password_siakad",
-      "patterns": [
-        "ganti password siakad",
-        "ubah password siakad",
-        "password siakad ganti",
-        "edit password siakad",
-        "merubah password siakad"
-      ],
+      "tag": "fasilitas",
+      "patterns": ["fasilitas kampus", "fasilitas", "lab komputer", "wifi", "perpustakaan", "ruang belajar", "mushola"],
       "responses": [
-        "Login ke SIAKAD, masuk ke menu Pengaturan atau Profil, lalu pilih Ubah Password. Masukkan password lama dan password baru, lalu simpan.",
-        "Setelah login SIAKAD, buka menu Ubah Password di bagian profil. Pastikan password baru minimal 8 karakter ya."
+        "🏫 Fasilitas STMIK Pelita Nusantara\n\n✅ Laboratorium komputer (spesifikasi terbaru)\n✅ WiFi cepat di seluruh area\n✅ Perpustakaan digital (e-book & jurnal)\n✅ Ruang belajar ber-AC\n✅ Mushola\n✅ Kantin\n✅ Area parkir luas\n\nSemua fasilitas gratis untuk mahasiswa aktif.",
+        "Fasilitas kampus: lab komputer, wifi, perpustakaan digital, ruang belajar AC, mushola. Nyaman untuk belajar."
       ]
     },
     {
-      "tag": "wisuda",
-      "patterns": [
-        "wisuda",
-        "jadwal wisuda",
-        "proses wisuda",
-        "toga",
-        "ijazah",
-        "yudisium",
-        "kapan wisuda",
-        "biaya wisuda",
-        "pendaftaran wisuda"
-      ],
+      "tag": "kontak",
+      "patterns": ["kontak kampus", "nomor kampus", "email kampus", "kontak admin", "hubungi kampus"],
       "responses": [
-        "Informasi jadwal wisuda biasanya diumumkan di website kampus atau SIAKAD. Pastikan kamu sudah memenuhi semua persyaratan akademik dan administrasi.",
-        "Proses wisuda: daftar lewat SIAKAD, lunasi biaya administrasi, lalu ikuti gladi bersih. Info lengkap cek website kampus ya."
+        "📞 Kontak STMIK Pelita Nusantara\n\n🌐 Website: <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>pmb.pelitanusantara.ac.id</a>\n\n📍 Datang langsung ke kampus:\n• Kampus 1: Jl. Iskandar Muda No. 1 Medan\n• Kampus 2: Jl. Lintas Sumatera, Lubuk Pakam\n\n🕒 Jam operasional: Senin-Jumat, 08.00-16.00 WIB",
+        "Kontak resmi di website <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>pmb.pelitanusantara.ac.id</a> atau datang langsung ke administrasi kampus."
       ]
     },
     {
-      "tag": "magang",
-      "patterns": [
-        "magang",
-        "pkl",
-        "praktik kerja lapangan",
-        "tempat magang",
-        "cari magang",
-        "info magang",
-        "magang kampus",
-        "pkkmb magang"
-      ],
+      "tag": "beasiswa",
+      "patterns": ["beasiswa", "kip kuliah", "kip", "info beasiswa"],
       "responses": [
-        "Untuk info magang atau PKL, hubungi bagian kemahasiswaan atau dosen pembimbing. Biasanya kampus punya mitra perusahaan tempat magang.",
-        "Kampus membantu penyaluran magang. Kamu bisa cek pengumuman di SIAKAD atau hubungi UPK (Unit Penempatan Kerja)."
+        "🎓 Beasiswa KIP Kuliah\n\nKampus menyediakan beasiswa KIP Kuliah bagi mahasiswa yang memenuhi persyaratan.\n\n✅ Mencakup biaya UKT dan biaya hidup\n✅ Kriteria: keluarga kurang mampu, terdaftar di DTKS\n✅ Pendaftaran melalui portal PMB\n\nInfo lengkap: <a href='https://pmb.pelitanusantara.ac.id' target='_blank' rel='noopener noreferrer'>pmb.pelitanusantara.ac.id</a>",
+        "Beasiswa KIP Kuliah tersedia. Cek syarat dan pendaftaran di website resmi kampus."
       ]
     },
     {
-      "tag": "pendaftaran_ukm",
-      "patterns": [
-        "daftar ukm",
-        "pendaftaran ukm",
-        "gabung ukm",
-        "cara masuk ukm",
-        "ukm pendaftaran",
-        "daftar organisasi kampus"
-      ],
+      "tag": "login_issue",
+      "patterns": ["gagal login", "tidak bisa login", "error login", "ga bisa login", "gabisa login"],
       "responses": [
-        "Pendaftaran UKM biasanya dibuka setiap awal semester. Cek papan pengumuman kampus atau ikuti sosialisasi UKM di acara PKKMB.",
-        "Kamu bisa langsung datang ke sekretariat UKM yang diminati atau hubungi ketua UKM-nya. Pendaftaran gratis kok."
+        "🔐 Masalah Login SIAKAD\n\n✅ Pastikan NIM/Email dan password benar (case sensitive)\n✅ Coba fitur 'Lupa Password'\n✅ Cek koneksi internet\n✅ Bersihkan cache browser\n\nJika masih gagal, hubungi admin kampus.",
+        "Cek NIM/Email dan password. Password case sensitive. Gunakan Lupa Password jika lupa. Hubungi admin jika akun terkunci."
       ]
     },
     {
-  "tag": "stimik",
-  "patterns": [
-    "stimik", "stimik itu apa", "apa itu stimik", "stimik kepanjangan",
-    "stimik adalah", "stimik singkatan dari", "kepanjangan stimik",
-    "pelita nusantara stimik", "stimik pelita nusantara", "kenapa stimik",
-    "stimik medan", "stmik", "stmik itu apa", "stmik kepanjangan",
-    "sejarah stimik", "profil stimik", "tentang stimik"
-  ],
-  "responses": [
-    "STIMIK adalah singkatan dari Sekolah Tinggi Manajemen Informatika dan Komputer. STIMIK merupakan perguruan tinggi yang fokus pada bidang teknologi informasi dan komputer. Kampus Pelita Nusantara termasuk dalam kelompok STIMIK karena memang spesialisasinya di bidang informatika dan komputer, dengan program studi seperti Teknik Informatika, Teknologi Informasi, dan Bisnis Digital.",
-    "STIMIK kepanjangannya Sekolah Tinggi Manajemen Informatika dan Komputer. Pelita Nusantara disebut STIMIK karena fokus pendidikan kami adalah di bidang teknologi informasi dan komputer. Berbeda dengan universitas yang punya banyak fakultas (kedokteran, hukum, ekonomi), STIMIK lebih fokus dan mendalam di bidang IT.",
-    "STIMIK = Sekolah Tinggi Manajemen Informatika dan Komputer. Pelita Nusantara adalah STIMIK karena kami mengkhususkan diri pada pendidikan di bidang teknologi informasi. Keuntungannya, kurikulum lebih terfokus, dosen lebih ahli di bidangnya, dan lulusan lebih siap bersaing di industri IT.",
-    "Kepanjangan STIMIK adalah Sekolah Tinggi Manajemen Informatika dan Komputer. Pelita Nusantara memilih bentuk STIMIK agar lebih fokus dan mendalam dalam mengembangkan kompetensi mahasiswa di bidang teknologi, informatika, dan komputer. Jadi bukan universitas umum yang punya banyak jurusan berbeda.",
-    "STIMIK singkatan dari Sekolah Tinggi Manajemen Informatika dan Komputer. Kenapa Pelita Nusantara berbentuk STIMIK? Karena visi kami adalah menjadi pusat unggulan di bidang teknologi informasi dan komputer di Sumatera Utara. Dengan fokus yang lebih sempit, kami bisa memberikan kualitas pendidikan yang lebih baik di bidang IT."
-  ],
-  "context_set": "info"
-},
-{
-  "tag": "jam_operasional",
-  "patterns": [
-    "jam operasional", "jam kerja kampus", "kampus buka jam berapa",
-    "admin buka jam berapa", "bagian akademik buka", "kantor kampus buka"
-  ],
-  "responses": [
-    "Jam operasional kampus: Senin-Jumat, pukul 08.00 - 16.00 WIB. Untuk layanan administrasi dan akademik, datang pada jam tersebut ya.",
-    "Kampus buka hari Senin sampai Jumat, jam 08.00 - 16.00. Hari Sabtu dan Minggu libur. Kalau butuh bantuan di luar jam kerja, bisa hubungi admin via WhatsApp atau email."
-  ]
-},
-{
-  "tag": "rekomendasi_jurusan",
-  "patterns": [
-    "rekomendasi jurusan", "jurusan yang cocok", "saran jurusan", "pilih jurusan",
-    "rekomendasi prodi", "jurusan sesuai minat", "cocok jurusan apa",
-    "saya suka", "minat saya", "hobi saya", "saya tertarik",
-    "jurusan untuk yang suka", "prodi yang tepat", "masuk jurusan mana", "bingung jurusan", "gatau mau jurusan apa"
-  ],
-  "responses": [
-    "Rekomendasi jurusan akan saya berikan berdasarkan minat dan hobi kamu. Coba ceritakan dulu, kamu suka apa? Misalnya: suka ngoding, suka jaringan, suka desain, atau suka bisnis?"
-  ],
-  "context_set": "akademik"
-}
+      "tag": "reset_password",
+      "patterns": ["lupa password", "reset password", "ganti password", "ubah password", "lupa pw", "lupa password edlink", "lupa password siakad"],
+      "responses": [
+        "🔑 Reset Password SIAKAD/EdLink\n\nLangkah-langkah:\n1️⃣ Buka halaman login SIAKAD\n2️⃣ Klik 'Lupa Password'\n3️⃣ Masukkan email atau NIM terdaftar\n4️⃣ Klik 'Kirim'\n5️⃣ Cek email untuk tautan reset\n6️⃣ Buat password baru (min. 8 karakter)\n\n💡 Tidak menerima email? Cek folder Spam.",
+        "Klik Lupa Password di halaman login, masukkan email/NIM, ikuti instruksi di email. Buat password baru minimal 8 karakter."
+      ]
+    },
+    {
+      "tag": "jadwal_kuliah",
+      "patterns": ["jadwal kuliah", "jadwal kelas", "jam kuliah", "jadwal perkuliahan"],
+      "responses": [
+        "📅 Jadwal Kuliah\n\nJadwal dapat dilihat di SIAKAD:\n🔗 <a href='https://pelitanusantara.siakadcloud.com/' target='_blank' rel='noopener noreferrer'>Login SIAKAD</a> → Akademik → Jadwal Kelas\n\nCek secara berkala karena bisa berubah.",
+        "Cek jadwal di SIAKAD: <a href='https://pelitanusantara.siakadcloud.com/' target='_blank' rel='noopener noreferrer'>Login SIAKAD</a> → Akademik → Jadwal Kelas."
+      ]
+    },
+    {
+      "tag": "krs",
+      "patterns": ["krs", "isi krs", "kartu rencana studi", "pengisian krs"],
+      "responses": [
+        "📋 Pengisian KRS\n\nCara mengisi KRS:\n1️⃣ Login SIAKAD\n2️⃣ Menu Akademik → Kartu Rencana Studi\n3️⃣ Pilih mata kuliah\n4️⃣ Simpan\n\n💡 Konsultasikan dengan dosen PA sebelum mengisi.",
+        "Isi KRS di SIAKAD: Login → Akademik → Kartu Rencana Studi. Pilih mata kuliah, lalu simpan."
+      ]
+    },
+    {
+      "tag": "khs",
+      "patterns": ["khs", "nilai", "cek nilai", "lihat nilai", "hasil studi"],
+      "responses": [
+        "📊 Cek Nilai (KHS)\n\nCara cek nilai:\n1️⃣ Login SIAKAD\n2️⃣ Menu Akademik → Nilai Mahasiswa\n\n📌 Nilai keluar 2-4 minggu setelah ujian.\n📌 Jika belum muncul, hubungi dosen.",
+        "Cek nilai di SIAKAD: Login → Akademik → Nilai Mahasiswa. Nilai biasanya keluar 2-4 minggu setelah ujian."
+      ]
+    },
+    {
+      "tag": "bayar_ukt",
+      "patterns": ["bayar ukt", "pembayaran ukt", "transfer ukt", "cara bayar ukt"],
+      "responses": [
+        "🏦 Pembayaran UKT\n\nLangkah-langkah:\n1️⃣ Hubungi admin kampus minta nomor BRIVA\n2️⃣ Transfer ke nomor BRIVA via BRI\n3️⃣ Simpan bukti bayar\n\n📅 Cicilan pertama: Rp 1.500.000 (pagi) / Rp 1.625.000 (malam)\n📅 Cicilan selanjutnya: Rp 500.000/bulan\n\n⚠️ Jangan transfer ke rekening pribadi!",
+        "Hubungi admin minta nomor BRIVA, transfer ke nomor VA, simpan bukti bayar. Cicilan pertama Rp 1.500.000/1.625.000, lanjut Rp 500.000 x4."
+      ]
+    },
+    {
+      "tag": "terimakasih",
+      "patterns": ["terima kasih", "makasih", "thanks", "thank you", "sudah benar", "oke", "ok", "siap"],
+      "responses": [
+        "Sama-sama! Senang bisa membantu. 😊\n\nAda yang lain ingin ditanyakan?",
+        "Terima kasih kembali! Silakan tanya lagi jika butuh info lain."
+      ]
+    },
+    {
+      "tag": "rekomendasi_jurusan",
+      "patterns": ["rekomendasi jurusan", "saran jurusan", "pilih jurusan", "jurusan cocok", "bingung jurusan"],
+      "responses": [
+        "🎯 Rekomendasi Jurusan\n\nUntuk membantu memilih jurusan, ceritakan minat Anda:\n\n💻 Suka coding / bikin aplikasi? → Teknik Informatika\n📡 Suka jaringan / server? → Teknologi Informasi\n📊 Suka bisnis online / digital marketing? → Bisnis Digital\n\n💰 UKT semua jurusan sama: pagi Rp 3.500.000, malam Rp 3.625.000 (bisa dicicil)\n\nKetik minat Anda, nanti saya rekomendasikan lebih spesifik.",
+        "Pilih jurusan sesuai minat:\n• Coding → Teknik Informatika\n• Jaringan → Teknologi Informasi\n• Bisnis online → Bisnis Digital\n\nUKT semua jurusan: pagi Rp 3.500.000, malam Rp 3.625.000. Bisa dicicil."
+      ]
+    }
   ]
 }
