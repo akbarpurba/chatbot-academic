@@ -1,10 +1,6 @@
 from .context import context
 
-# =========================
-# FUNGSI BANTU UNTUK DETEKSI JAWABAN
-# =========================
 def jawaban_sudah(text):
-    """Deteksi jawaban 'sudah' dalam berbagai bentuk untuk troubleshooting"""
     text_lower = text.lower()
     kata_sudah = [
         "sudah", "bisa", "iya", "ya", "y", "berhasil", 
@@ -15,7 +11,6 @@ def jawaban_sudah(text):
     return any(kata in text_lower for kata in kata_sudah)
 
 def jawaban_belum(text):
-    """Deteksi jawaban 'belum' dalam berbagai bentuk untuk troubleshooting"""
     text_lower = text.lower()
     kata_belum = [
         "belum", "tidak", "nggak", "gak", "ga", "g", "gk", "gx",
@@ -26,7 +21,6 @@ def jawaban_belum(text):
     return any(kata in text_lower for kata in kata_belum)
 
 def jawaban_ya(text):
-    """Deteksi jawaban 'ya' untuk pertanyaan follow-up"""
     text_lower = text.lower()
     kata_ya = [
         "ya", "iya", "iy", "y", 
@@ -39,7 +33,6 @@ def jawaban_ya(text):
     return any(kata in text_lower for kata in kata_ya)
 
 def jawaban_tidak(text):
-    """Deteksi jawaban 'tidak' untuk pertanyaan follow-up"""
     text_lower = text.lower()
     kata_tidak = [
         "tidak", "tidak ada", "tidak mau", "tidak ingin",
@@ -57,18 +50,12 @@ def jawaban_tidak(text):
     return any(kata in text_lower for kata in kata_tidak)
 
 def reset_troubleshoot():
-    """Reset semua state troubleshooting"""
     context["troubleshoot_step"] = 0
     context["troubleshoot_type"] = None
     context["waiting_for_follow_up"] = False
 
 
-# =========================
-# HANDLER JAWABAN "ADA" / "TIDAK ADA" DI AKHIR
-# =========================
 def handle_follow_up(user_input):
-    """Menangani jawaban user setelah ditanya 'Ada yang lain ingin ditanyakan?'"""
-    # Hanya proses jika sedang dalam mode menunggu follow-up
     if context.get("waiting_for_follow_up", False):
         if jawaban_ya(user_input):
             context["waiting_for_follow_up"] = False
@@ -77,15 +64,10 @@ def handle_follow_up(user_input):
             context["waiting_for_follow_up"] = False
             return "Baik, terima kasih sudah menggunakan PENUSA Bot. 😊\n\nJika ada pertanyaan lain, silakan tanyakan kapan saja. Semoga membantu!"
         else:
-            # Jika jawaban tidak jelas, tanya ulang
             return "Maaf, saya kurang paham. Silakan jawab **'ada'** jika masih ada pertanyaan, atau **'tidak'** jika sudah selesai.\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
-    
     return None
 
 
-# =========================
-# TROUBLESHOOTING LOGIN
-# =========================
 def troubleshoot_login(user_input):
     step = context.get("troubleshoot_step", 0)
     
@@ -149,9 +131,41 @@ def troubleshoot_login(user_input):
             return "⚠️ **Mohon maaf, saya sudah memberikan semua langkah yang bisa saya bantu.**\n\nKarena masalah masih belum terselesaikan, silakan:\n\n📞 **Hubungi admin kampus**\n🌐 Website: <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n📍 **Atau datang langsung ke kampus**\n• Kampus 1: Jl. Iskandar Muda No. 1 Medan\n• Kampus 2: Jl. Lintas Sumatera, Tj. Garbus Satu, Lubuk Pakam\n🕒 Jam operasional: Senin-Jumat, 08.00-16.00 WIB\n\n💡 **Tips:** Jangan lupa bawa kartu mahasiswa atau identitas diri untuk verifikasi data.\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
 
 
-# =========================
-# TROUBLESHOOTING KRS TIDAK BISA DIISI
-# =========================
+def troubleshoot_lupa_password(user_input):
+    step = context.get("troubleshoot_step", 0)
+    
+    if step == 0:
+        context["troubleshoot_step"] = 1
+        context["troubleshoot_type"] = "lupa_password"
+        return "🔑 **Lupa Password - Langkah 1/3**\n\n✅ Saran: Gunakan fitur 'Lupa Password' di halaman login SIAKAD.\n\n📋 Langkah-langkah:\n1. Buka halaman login SIAKAD\n2. Klik tombol 'Lupa Password'\n3. Masukkan email atau NIM yang terdaftar\n4. Klik 'Kirim'\n5. Cek email Anda untuk tautan reset password\n6. Buat password baru (minimal 8 karakter, kombinasi huruf, angka, dan simbol)\n\n⚠️ Jika tidak menerima email, cek folder Spam atau junk mail.\n\n❓ Apakah sudah berhasil reset password? (jawab: 'sudah' atau 'belum')"
+    
+    elif step == 1:
+        if jawaban_sudah(user_input):
+            reset_troubleshoot()
+            context["waiting_for_follow_up"] = True
+            return "✅ **Bagus!** Password Anda sudah berhasil direset. Silakan login dengan password baru.\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
+        elif jawaban_belum(user_input):
+            context["troubleshoot_step"] = 2
+            return "🔑 **Lupa Password - Langkah 2/3**\n\n✅ Saran: Pastikan email atau NIM yang Anda masukkan sudah benar dan terdaftar di sistem.\n\n📋 Cek kembali:\n• Email yang digunakan saat pendaftaran\n• NIM yang tertera di kartu mahasiswa\n\n❓ Apakah sudah memasukkan email/NIM yang benar? (jawab: 'sudah' atau 'belum')"
+        else:
+            return "Maaf, saya kurang paham. Silakan jawab dengan **'sudah'** jika berhasil, atau **'belum'** jika masih gagal.\n\n❓ Apakah sudah berhasil reset password? (jawab: 'sudah' atau 'belum')"
+    
+    elif step == 2:
+        if jawaban_sudah(user_input):
+            context["troubleshoot_step"] = 1
+            return troubleshoot_lupa_password(user_input)
+        elif jawaban_belum(user_input):
+            context["troubleshoot_step"] = 3
+            return "🔑 **Lupa Password - Langkah 3/3 (Terakhir)**\n\n✅ Saran: Hubungi admin kampus untuk reset password secara manual.\n\n📋 Yang perlu disiapkan saat menghubungi admin:\n• Nama lengkap\n• NIM\n• Program studi\n• Nomor HP aktif\n• Kartu mahasiswa (sebagai bukti)\n\n📞 **Kontak admin:**\n🌐 Website: <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n📍 **Atau datang langsung ke kampus:**\n• Kampus 1: Jl. Iskandar Muda No. 1 Medan\n• Kampus 2: Jl. Lintas Sumatera, Tj. Garbus Satu, Lubuk Pakam\n🕒 Jam operasional: Senin-Jumat, 08.00-16.00 WIB\n\n💡 Admin akan memverifikasi identitas Anda dan mereset password akun.\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
+        else:
+            return "Maaf, saya kurang paham. Silakan jawab dengan **'sudah'** jika sudah benar, atau **'belum'** jika masih salah.\n\n❓ Apakah sudah memasukkan email/NIM yang benar? (jawab: 'sudah' atau 'belum')"
+    
+    elif step == 3:
+        reset_troubleshoot()
+        context["waiting_for_follow_up"] = True
+        return "✅ **Baik, semoga segera teratasi.** 😊\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
+
+
 def troubleshoot_krs(user_input):
     step = context.get("troubleshoot_step", 0)
     
@@ -205,9 +219,6 @@ def troubleshoot_krs(user_input):
             return "📋 **Silakan konsultasi dengan dosen pembimbing akademik (PA) Anda.**\n\nDosen PA dapat membantu:\n• Membuka blokir pengisian KRS\n• Memberikan solusi jika ada kendala teknis\n\nJika sudah konsultasi tapi masih tidak bisa, hubungi bagian akademik.\n\n📞 Kontak akademik tersedia di website <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
 
 
-# =========================
-# TROUBLESHOOTING NILAI TIDAK MUNCUL
-# =========================
 def troubleshoot_nilai(user_input):
     step = context.get("troubleshoot_step", 0)
     
@@ -256,12 +267,9 @@ def troubleshoot_nilai(user_input):
         else:
             reset_troubleshoot()
             context["waiting_for_follow_up"] = True
-            return "📞 **Silakan hubungi dosen pengampu mata kuliah yang bersangkutan.**\n\nDosen dapat memberikan informasi:\n• Apakah nilai sudah diinput\n• Kapan nilai akan keluar\n• Jika ada kendala teknis\n\nJika sudah menghubungi dosen tapi masih belum ada perubahan, hubungi bagian akademik.\n\n📞 Kontak akademik tersedia di website <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
+            return "📞 **Silakan hubungi dosen pengampu mata kuliah yang bersangkutan.**\n\nDosen dapat memberikan informasi:\n• Apakah nilai sudah diinput\n• Kapan nilai akan keluar\n• Jika ada kendala teknis\n\nJika sudah hubungi dosen tapi masih belum ada perubahan, hubungi bagian akademik.\n\n📞 Kontak akademik tersedia di website <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
 
 
-# =========================
-# TROUBLESHOOTING ERROR SIAKAD
-# =========================
 def troubleshoot_siakad_error(user_input):
     step = context.get("troubleshoot_step", 0)
     
@@ -301,7 +309,7 @@ def troubleshoot_siakad_error(user_input):
             context["troubleshoot_step"] = 4
             return "⚠️ **Error SIAKAD - Langkah 4/4 (Terakhir)**\n\n✅ Saran: Coba gunakan jaringan internet yang berbeda.\n\n❓ Apakah SIAKAD sudah bisa diakses? (jawab: 'sudah' atau 'belum')"
         else:
-            return "Maaf, saya kurang paham. Silakan jawab dengan **'sudah'** jika bisa, vagy **'belum'** jika masih error.\n\n❓ Apakah SIAKAD sudah bisa diakses? (jawab: 'sudah' atau 'belum')"
+            return "Maaf, saya kurang paham. Silakan jawab dengan **'sudah'** jika bisa, atau **'belum'** jika masih error.\n\n❓ Apakah SIAKAD sudah bisa diakses? (jawab: 'sudah' atau 'belum')"
     
     elif step == 4:
         if jawaban_sudah(user_input):
@@ -314,9 +322,6 @@ def troubleshoot_siakad_error(user_input):
             return "⚠️ **Mohon maaf, saya sudah memberikan semua langkah yang bisa saya bantu.**\n\nKemungkinan SIAKAD sedang dalam masa maintenance atau ada gangguan server. Silakan coba beberapa saat lagi.\n\nJika masalah berlanjut, silakan hubungi admin kampus:\n🌐 <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n📍 Atau datang langsung ke administrasi kampus.\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
 
 
-# =========================
-# TROUBLESHOOTING GAGAL DAFTAR
-# =========================
 def troubleshoot_gagal_daftar(user_input):
     step = context.get("troubleshoot_step", 0)
     
@@ -354,7 +359,7 @@ def troubleshoot_gagal_daftar(user_input):
             return "✅ **Bagus!** Pendaftaran Anda berhasil. 😊\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
         elif jawaban_belum(user_input):
             context["troubleshoot_step"] = 4
-            return "📝 **Gagal Mendaftar - Langkah 4/4 (Terakhir)**\n\n✅ Saran: Coba bersihkan cache browser atau gunakan mode incognito.\n\n❓ Setelah mencoba, apakah pendaftaran berhasil? (jawab: 'sudah' vagy 'belum')"
+            return "📝 **Gagal Mendaftar - Langkah 4/4 (Terakhir)**\n\n✅ Saran: Coba bersihkan cache browser atau gunakan mode incognito.\n\n❓ Setelah mencoba, apakah pendaftaran berhasil? (jawab: 'sudah' atau 'belum')"
         else:
             return "Maaf, saya kurang paham. Silakan jawab dengan **'sudah'** jika berhasil, atau **'belum'** jika masih gagal.\n\n❓ Setelah mencoba, apakah pendaftaran berhasil? (jawab: 'sudah' atau 'belum')"
     
@@ -369,9 +374,6 @@ def troubleshoot_gagal_daftar(user_input):
             return "⚠️ **Mohon maaf, saya sudah memberikan semua langkah yang bisa saya bantu.**\n\nJika masih mengalami masalah pendaftaran, silakan:\n\n📞 **Hubungi panitia PMB**\n🌐 Website: <a href='https://pmb.pelitanusantara.ac.id' target='_blank'>pmb.pelitanusantara.ac.id</a>\n\n📍 **Atau datang langsung ke kampus**\n• Kampus 1: Jl. Iskandar Muda No. 1 Medan\n• Kampus 2: Jl. Lintas Sumatera, Tj. Garbus Satu, Lubuk Pakam\n🕒 Jam operasional: Senin-Jumat, 08.00-16.00 WIB\n\n💡 Petugas akan membantu pendaftaran secara offline.\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
 
 
-# =========================
-# TROUBLESHOOTING LUPA DATA LOGIN
-# =========================
 def troubleshoot_lupa_data_login(user_input):
     step = context.get("troubleshoot_step", 0)
     
@@ -397,17 +399,15 @@ def troubleshoot_lupa_data_login(user_input):
         return "✅ **Baik, semoga segera teratasi.** 😊\n\n❓ Ada yang lain ingin ditanyakan? (jawab 'ada' atau 'tidak')"
 
 
-# =========================
-# MAIN HANDLER
-# =========================
 def handle_troubleshooting(user_input):
     text = user_input.lower()
     
-    # Cek apakah user sedang dalam mode troubleshooting
     if context.get("troubleshoot_step", 0) > 0:
         troubleshoot_type = context.get("troubleshoot_type")
         if troubleshoot_type == "login":
             return troubleshoot_login(user_input)
+        elif troubleshoot_type == "lupa_password":
+            return troubleshoot_lupa_password(user_input)
         elif troubleshoot_type == "krs":
             return troubleshoot_krs(user_input)
         elif troubleshoot_type == "nilai":
@@ -419,14 +419,9 @@ def handle_troubleshooting(user_input):
         elif troubleshoot_type == "lupa_data_login":
             return troubleshoot_lupa_data_login(user_input)
     
-    # =========================
-    # DETEKSI MASALAH LOGIN (Bahasa formal + sehari-hari)
-    # =========================
     kata_login = [
-        # Formal
         "gagal login", "tidak bisa login", "error login", "login gagal", "tidak dapat masuk",
         "akun tidak bisa diakses", "masuk ke siakad gagal", "login error",
-        # Sehari-hari
         "ga bisa login", "gabisa login", "gak bisa login", "nggak bisa login",
         "ga bisa masuk", "gabisa masuk", "gak bisa masuk", "nggak bisa masuk",
         "login susah", "susah login", "login error mulu", "error terus",
@@ -435,14 +430,20 @@ def handle_troubleshooting(user_input):
     if any(kata in text for kata in kata_login):
         return troubleshoot_login(user_input)
     
-    # =========================
-    # DETEKSI MASALAH KRS (Bahasa formal + sehari-hari)
-    # =========================
+    kata_lupa_password = [
+        "lupa password", "lupa pw", "reset password", "forgot password",
+        "lupa sandi", "lupa kata sandi", "ganti password", "ubah password",
+        "lupa password siakad", "lupa pw siakad", "reset password siakad",
+        "lupa password edlink", "lupa pw edlink", "reset password edlink",
+        "tidak bisa ganti password", "gagal ganti password", "error ganti password",
+        "lupa password akun", "password lupa", "pw lupa", "sandi lupa"
+    ]
+    if any(kata in text for kata in kata_lupa_password):
+        return troubleshoot_lupa_password(user_input)
+    
     kata_krs = [
-        # Formal
         "krs tidak bisa", "tidak bisa isi krs", "gagal isi krs", "krs error",
         "krs tidak dapat diajukan", "pengisian krs gagal", "krs tidak tersimpan",
-        # Sehari-hari
         "krs ga bisa", "krs gak bisa", "krs ngak bisa", "ga bisa isi krs",
         "gak bisa isi krs", "nggak bisa isi krs", "krs error terus",
         "krs ga bisa disimpan", "krs gak bisa diajukan", "isi krs gagal",
@@ -451,15 +452,10 @@ def handle_troubleshooting(user_input):
     if any(kata in text for kata in kata_krs):
         return troubleshoot_krs(user_input)
     
-    # =========================
-    # DETEKSI MASALAH NILAI (Bahasa formal + sehari-hari)
-    # =========================
     kata_nilai = [
-        # Formal
         "nilai tidak muncul", "nilai belum keluar", "nilai kosong", "khs kosong",
         "nilai tidak ada", "hasil studi tidak muncul", "transkrip nilai kosong",
         "nilai belum diinput", "khs belum keluar", "nilai belum tampil",
-        # Sehari-hari
         "nilai ga muncul", "nilai gak muncul", "nilai ngak muncul", "nilai belum ada",
         "nilai kosong semua", "khs ga ada", "khs gak ada", "nilai ga keluar",
         "nilai gak keluar", "nilai belum muncul semua", "khs kosong semua",
@@ -468,15 +464,10 @@ def handle_troubleshooting(user_input):
     if any(kata in text for kata in kata_nilai):
         return troubleshoot_nilai(user_input)
     
-    # =========================
-    # DETEKSI ERROR SIAKAD (Bahasa formal + sehari-hari)
-    # =========================
     kata_siakad_error = [
-        # Formal
         "siakad error", "error siakad", "server down", "siakad tidak bisa dibuka",
         "siakad bermasalah", "sistem siakad error", "siakad tidak dapat diakses",
         "siakad sedang error", "website siakad error",
-        # Sehari-hari
         "siakad ga bisa", "siakad gak bisa", "siakad ngak bisa", "siakad error terus",
         "siakad lemot", "siakad lambat", "siakad loading terus", "siakad blank",
         "siakad putih", "siakad tidak merespon", "siakad ga bisa dibuka",
@@ -485,15 +476,10 @@ def handle_troubleshooting(user_input):
     if any(kata in text for kata in kata_siakad_error):
         return troubleshoot_siakad_error(user_input)
     
-    # =========================
-    # DETEKSI GAGAL DAFTAR (Bahasa formal + sehari-hari)
-    # =========================
     kata_gagal_daftar = [
-        # Formal
         "gagal daftar", "gagal mendaftar", "error pendaftaran", "tidak bisa daftar",
         "pendaftaran error", "pendaftaran gagal", "registrasi gagal",
         "tidak dapat mendaftar", "proses pendaftaran error",
-        # Sehari-hari
         "ga bisa daftar", "gak bisa daftar", "nggak bisa daftar", "daftar gagal",
         "pendaftaran ga bisa", "pendaftaran gak bisa", "error waktu daftar",
         "gagal waktu daftar", "daftar error", "formulir error", "submit gagal"
@@ -501,15 +487,10 @@ def handle_troubleshooting(user_input):
     if any(kata in text for kata in kata_gagal_daftar):
         return troubleshoot_gagal_daftar(user_input)
     
-    # =========================
-    # DETEKSI LUPA DATA LOGIN (Bahasa formal + sehari-hari)
-    # =========================
     kata_lupa_data = [
-        # Formal
         "lupa nim", "lupa email", "lupa data login", "lupa akun", "lupa username",
         "lupa password", "lupa kata sandi", "tidak ingat nim", "tidak ingat email",
         "nim hilang", "email hilang", "data akun lupa",
-        # Sehari-hari
         "lupa nim saya", "nim lupa", "email lupa", "lupa password siakad",
         "lupa pw", "lupa sandi", "gatau nim", "gak tau nim", "ga tau nim",
         "lupa akun saya", "nim berapa", "cari nim", "nim saya apa",
