@@ -7,6 +7,9 @@
   "g": "tidak",
   "enggak": "tidak",
   "ngga": "tidak",
+  "ndak": "tidak",
+  "nang": "tidak",
+  "la": "tidak",
 
   "bsa": "bisa",
   "lgin": "login",
@@ -23,6 +26,8 @@
   "udh": "sudah",
   "sdh": "sudah",
   "udah": "sudah",
+  "enggo": "sudah",
+  "nggo": "sudah",
 
   "bgt": "banget",
   "bgtt": "banget",
@@ -43,7 +48,6 @@
   "gua": "saya",
   "au": "saya",
   "aku": "saya",
-
   "gweh": "saya",
   "aing": "saya",
   "ahu": "saya",
@@ -53,6 +57,8 @@
   "kau": "kamu",
   "ko": "kamu",
   "ho": "kamu",
+  "ndu": "kamu",
+  "kam": "kamu",
 
   "pls": "tolong",
   "pliss": "tolong",
@@ -109,6 +115,7 @@
   "apa": "apa",
   "aha": "apa",
   "apaan": "apa",
+  "kai": "apa",
 
   "bole": "boleh",
   "boleh": "boleh",
@@ -172,15 +179,9 @@
 
   "gapapa": "tidak apa-apa",
   "lalit": "tidak ada",
-  "la": "tidak",
   "ula": "jangan",
   "kerina": "semua",
-  "enggo": "sudah",
-  "nggo": "sudah",
-  "kai": "apa",
   "engkai": "mengapa",
-  "ndu": "kamu", 
-  "kam": "kamu",
   "keri": "habis",
 
   "bang": "bang",
@@ -188,7 +189,6 @@
   "bro": "saudara",
   "sis": "saudari",
   "opung": "kakek",
-
 
   "banyak": "banyak",
   "dikit": "sedikit",
@@ -204,7 +204,6 @@
   "bingung": "bingung",
   "ribet": "ribet",
   "susah": "sulit",
-
 
   "gampang": "mudah",
 
@@ -230,29 +229,32 @@
   "bener": "benar",
   "benar": "benar",
 
-
   "salah": "salah",
 
   "coba": "coba",
   "cba": "coba",
   "cubak": "coba",
 
-  "ndak": "tidak",
-  "nang": "tidak",
   "hengker": "hacker",
   "hek": "hack",
   "p": "halo",
   "punten": "halo",
+  "alo": "halo",
+  "hallo": "halo",
+  "hlo": "halo",
+
   "kata sandi": "password",
   "sandi": "password",
   "paspot": "password",
   "pw": "password",
+
   "eror": "error",
-  "bdg":"bisnis digital",
+
+  "bdg": "bisnis digital",
   "tif": "teknik informatika",
   "tgi": "teknologi informasi",
+
   "dapat": "bisa",
-  "alo": "halo",
   "dmn": "dimana",
   "dmna": "dimana"
 }
